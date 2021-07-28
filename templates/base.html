@@ -31,10 +31,18 @@
             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Discover</a>
           </li>
         </ul>
+        {% if loggedin == True %}
+        <form class="d-flex">
+          <button class="btn btn-primary" type="submit">Log out</button>
+        </form>
+        {% else %}
         <form class="d-flex">
           <button class="btn btn-primary" type="submit">Log in</button>
           <button class="btn btn-primary" type="submit">Register</button>
         </form>
+        {% endif %}
+        
+        
       </div>
     </div>
   </nav>
