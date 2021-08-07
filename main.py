@@ -11,5 +11,9 @@ def index():
 def signup():
     return render_template("signup.html", title="Login")
 
+@app.route("/login")
+def login():
+    return "<h1>login Stuff and whatever</h1>"
+
 if __name__ == "__main__":
     app.run(debug = True)
