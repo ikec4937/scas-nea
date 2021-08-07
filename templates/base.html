@@ -30,16 +30,15 @@
           <li class="nav-item">
             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Discover</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Dashboard</a>
+          </li>
         </ul>
         {% if loggedin == True %}
-        <form class="d-flex">
-          <a href="{{ url_for('signup') }}"><button class="btn btn-primary" type="submit">Log out</button></a>
-        </form>
+        <a href="{{ url_for('index') }}"><button class="btn btn-primary">Log out</button></a>
         {% else %}
-        <form class="d-flex">
-          <a href="{{ url_for('login') }}"><button class="btn btn-primary" type="submit">Log in</button></a>
-          <button class="btn btn-primary" type="submit">Register</button>
-        </form>
+        <a href="{{ url_for('login') }}"><button class="btn btn-primary">Log in</button></a>
+        <a href="{{ url_for('signup') }}"><button class="btn btn-primary">Register</button></a>
         {% endif %}
         
         
