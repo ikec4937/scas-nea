@@ -35,10 +35,10 @@
           </li>
         </ul>
         {% if loggedin == True %}
-        <a href="{{ url_for('index') }}"><button class="btn btn-primary">Log out</button></a>
+          <a href="{{ url_for('index') }}"><button class="btn btn-primary">Log out</button></a>
         {% else %}
-        <a href="{{ url_for('login') }}"><button class="btn btn-primary">Log in</button></a>
-        <a href="{{ url_for('signup') }}"><button class="btn btn-primary">Register</button></a>
+          <a href="{{ url_for('login') }}"><button class="btn btn-primary">Log in</button></a>
+          <a href="{{ url_for('signup') }}"><button class="btn btn-primary">Register</button></a>
         {% endif %}
         
         

@@ -9,11 +9,11 @@ def index():
 
 @app.route("/signup")
 def signup():
-    return render_template("signup.html", title="Login")
+    return render_template("signup.html", title="Signup")
 
 @app.route("/login")
 def login():
-    return "<h1>login Stuff and whatever</h1>"
+    return render_template("login.html", title="Login")
 
 if __name__ == "__main__":
     app.run(debug = True)
