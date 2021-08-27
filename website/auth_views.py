@@ -2,6 +2,10 @@ from flask import Blueprint, render_template
 
 auth = Blueprint("auth_views", __name__)
 
-@views.route("/")
-def home():
-    return render_template("home.html")
+@auth.route("/login")
+def login():
+    return "<h1>Login</h1>"
+
+@auth.route("/register")
+def registration():
+    return "<h1>Registration</h1>"
