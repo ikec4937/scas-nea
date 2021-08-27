@@ -34,14 +34,10 @@
             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Dashboard</a>
           </li>
         </ul>
-        {% if loggedin %}
-          <a href="{{ url_for('index') }}"><button class="btn btn-primary">Log out</button></a>
-        {% else %}
-          <a href="{{ url_for('login') }}"><button class="btn btn-primary">Log in</button></a>
-          <a href="{{ url_for('signup') }}"><button class="btn btn-primary">Register</button></a>
-        {% endif %}
         
-        
+        <a href="{{ url_for('login') }}"><button class="btn btn-primary">Log in</button></a>
+        <a href="{{ url_for('signup') }}"><button class="btn btn-primary">Register</button></a>
+
       </div>
     </div>
   </nav>
