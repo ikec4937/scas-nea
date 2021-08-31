@@ -8,4 +8,4 @@ def login():
 
 @auth.route("/register")
 def registration():
-    return "<h1>Registration</h1>"
+    return render_template("registration.html")
