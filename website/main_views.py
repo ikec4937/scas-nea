@@ -4,4 +4,4 @@ main = Blueprint("main_views", __name__)
 
 @main.route("/")
 def index():
-    return "<h1>Home</h1>"
+    return render_template("index.html")
