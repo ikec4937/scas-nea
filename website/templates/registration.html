@@ -1,59 +1,98 @@
 {% extends "base.html" %} 
-{% block title %}Home{% endblock %}
+{% block title %}Registration{% endblock %}
 
 {% block content %}
 <div class="container">
-  <h1>Register</h1>
+  <form action="POST">
+    <h1>Register</h1>
 
+    <div class="form-group">
+      <label for="fname">First Name</label>
+      <input 
+        type="text" 
+        class="form-control" 
+        id="fname" 
+        name="fname" 
+        placeholder="First Name" />
+    </div>
 
-  <div class="form-group">
-    <label for="email">First Name</label>
-    <input 
-      type="text" 
-      class="form-control" 
-      id="fname" 
-      name="fname" 
-      placeholder="First Name" />
-  </div>
+    <div class="form-group">
+      <label for="lname">Last Name</label>
+      <input 
+        type="text" 
+        class="form-control" 
+        id="lname" 
+        name="lname" 
+        placeholder="Enter Last Name" />
+    </div>
 
-  <div class="form-group">
-    <label for="email">Last Name</label>
-    <input 
-      type="text" 
-      class="form-control" 
-      id="lname" 
-      name="lname" 
-      placeholder="Enter Last Name" />
-  </div>
+    <div class="form-group">
+      <label for="sschool">Secondary School</label>
+      <input 
+        type="text" 
+        class="form-control" 
+        id="sschool" 
+        name="sschool" 
+        placeholder="Enter Secondary School" />
+    </div>
 
-  <div class="form-group">
-    <label for="email">Secondary School</label>
-    <input 
-      type="text" 
-      class="form-control" 
-      id="sschool" 
-      name="sschool" 
-      placeholder="Enter Secondary School" />
-  </div>
+    <div class="form-group">
+      <label for="email">Email Address</label>
+      <input 
+        type="email" 
+        class="form-control" 
+        id="email" 
+        name="email" 
+        placeholder="Enter Email" />
+    </div>
+    
+    <div class="form-group">
+      <label for="pword">Password</label>
+      <input 
+        type="password" 
+        class="form-control" 
+        id="pword" 
+        name="pword" 
+        placeholder="Enter Password" />
+    </div>
 
-  <div class="form-group">
-    <label for="email">Email Address</label>
-    <input 
-      type="email" 
-      class="form-control" 
-      id="email" 
-      name="email" 
-      placeholder="Enter Email" />
-  </div>
-  
-  <div class="form-group">
-    <label for="email">Email Address</label>
-    <input 
-      type="email" 
-      class="form-control" 
-      id="email" 
-      name="email" 
-      placeholder="Enter Email" />
-  </div>
+    <div class="form-group">
+      <label for="pword2">Repeat Password</label>
+      <input 
+        type="password" 
+        class="form-control" 
+        id="pword2" 
+        name="pword2" 
+        placeholder="Enter Password again" />
+    </div>
+
+    <div class="form-check">
+      <label class="form-check-label" for="ifadmin">
+        I am a student
+      </label>
+      <input 
+        class="form-check-input" 
+        type="radio" 
+        name="ifadmin" 
+        id="student" 
+        value="option1" >
+      
+    </div>
+    
+    <div class="form-check">
+      <label class="form-check-label" for="ifadmin">
+        I am an admin.
+      </label>
+      <input 
+        class="form-check-input" 
+        type="radio" 
+        name="ifadmin" 
+        id="admin" 
+        value="option2" >
+      
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
 </div>
 {% endblock %}
