@@ -20,3 +20,8 @@ def create_app():
     app.register_blueprint(auth, url_prefix="/")
 
     return app
+
+def create_database(app):
+    if not path.exists("website/" + DB_NAME):
+        db.create_all(app=app)
+        print("Created Database")

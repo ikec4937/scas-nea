@@ -35,6 +35,6 @@ def registration():
             db.session.add(new_user)
             db.session.commit()
             flash("You're in!", category="success")
-            redirect(url_for("views.home"))
+            redirect(url_for("main_views.index"))
     
     return render_template("registration.html")

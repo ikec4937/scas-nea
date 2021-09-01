@@ -1,1 +1,1 @@
-Finish registration thingy
+Work out how the database thing is going to work
