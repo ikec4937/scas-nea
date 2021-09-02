@@ -5,18 +5,18 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 auth = Blueprint("auth_views", __name__)
 
-@auth.route("/login")
+@auth.route("/login", methods=["GET", "POST"])
 def login():
     return "<h1>Login</h1>"
 
-@auth.route("/register")
+@auth.route("/register", methods=["GET", "POST"])
 def registration():
     if request.method == "POST":
         email = request.form.get("email")
         firstname = request.form.get("fname")
         lastname = request.form.get("lname")
         s_school = request.form.get("sschool") #What secondary school the user is registering for/from
-        if_admin = request.form.get("ifadmin") #If the student is an admin
+        stat_check = request.form.get("statcheck") #If the student is an admin
         password = request.form.get("pword")
         password2 = request.form.get("pword2")
     
@@ -31,7 +31,7 @@ def registration():
         elif password != password2:
             flash("Passwords do not match", category="error")
         else:
-            new_user = User(email=email, firstname=firstname, lastname=lastname, secondary_school=s_school, if_admin=if_admin,  password=generate_password_hash(password2, method="sha256"))
+            new_user = User(email=email, firstname=firstname, lastname=lastname, secondary_school=s_school, if_admin=statcheck,  password=generate_password_hash(password2, method="sha256"))
             db.session.add(new_user)
             db.session.commit()
             flash("You're in!", category="success")

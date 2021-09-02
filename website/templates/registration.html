@@ -3,7 +3,7 @@
 
 {% block content %}
 <div class="container">
-  <form action="POST">
+  <form method="POST">
     <h1>Register</h1>
 
     <div class="form-group">
@@ -67,28 +67,28 @@
     </div>
 
     <div class="form-check">
-      <label class="form-check-label" for="ifadmin">
+      <label class="form-check-label" for="statcheck">
         I am a student
       </label>
       <input 
         class="form-check-input" 
         type="radio" 
-        name="ifadmin" 
+        name="statcheck" 
         id="student" 
-        value="option1" >
+        value="student" >
       
     </div>
     
     <div class="form-check">
-      <label class="form-check-label" for="ifadmin">
+      <label class="form-check-label" for="statcheck">
         I am an admin.
       </label>
       <input 
         class="form-check-input" 
         type="radio" 
-        name="ifadmin" 
+        name="statcheck" 
         id="admin" 
-        value="option2" >
+        value="admin" >
       
     </div>
     

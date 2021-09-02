@@ -13,4 +13,4 @@ class User(db.Model, UserMixin):
     secondary_school = db.Column(db.String(250))
     firstname = db.Column(db.String(150))
     lastname = db.Column(db.String(150))
-    if_admin = db.Column(db.Boolean())
+    if_admin = db.Column(db.String(20))
