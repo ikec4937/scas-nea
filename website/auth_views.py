@@ -33,7 +33,7 @@ def registration():
         elif stat_check == "":
             flash("Are you a student or a teacher?", category="error")
         else:
-            new_user = User(email=email, firstname=firstname, lastname=lastname, secondary_school=s_school, if_admin=statcheck,  password=generate_password_hash(password2, method="sha256"))
+            new_user = User(email=email, firstname=firstname, lastname=lastname, secondary_school=s_school, if_admin=stat_check,  password=generate_password_hash(password2, method="sha256"))
             db.session.add(new_user)
             db.session.commit()
             flash("You're in!", category="success")

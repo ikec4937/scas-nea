@@ -4,7 +4,23 @@ from sqlalchemy.sql import func
 
 """
 Now begs the question: How will the database be modeled?
+
+Application:
+- Application ID
+- User ID
+- School ID
+- User Grades
 """
+
+class Application:
+    pass
+
+class School(db.Model, UserMixin):
+    id = db.Column(db.Integer, primary_key=True)
+    school_name = db.column(db.String(150))
+    description = db.column(db.String(25000))
+    contact_email = db.Column(db.String(150), unique=True)
+    #There are other things, I don't know what they are though
 
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
