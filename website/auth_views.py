@@ -2,12 +2,34 @@ from flask import Blueprint, render_template, request, flash, redirect, url_for
 from .models import User
 from . import db
 from werkzeug.security import generate_password_hash, check_password_hash
+from flask_login import login_user, login_required, logout_user, current_user
 
 auth = Blueprint("auth_views", __name__)
 
 @auth.route("/login", methods=["GET", "POST"])
 def login():
-    return "<h1>Login</h1>"
+    if request.method == "POST":
+        email = request.form.get("email")
+        password = request.form.get("pword")
+
+        user = User.query.filter_by(email=email).first() #search through all emails
+        if user:
+            if check_password_hash(user.password, password):
+                flash("You're in!", category="success")
+                login_user(user, remember=True) #Remembers the user, till the server shuts down or the web server restarts
+                return redirect(url_for("views.home"))
+            else:
+                flash("Your password is incorrect", category="error")
+        else:
+            flash("Your email does not exist with us", category="error")
+    
+    return render_template("login.html", user=current_user)
+
+@app.route("/logout-user")
+@login_required
+def logout():
+    logout_user()
+    return redirect(url_for("main_views.index"))
 
 @auth.route("/register", methods=["GET", "POST"])
 def registration():
@@ -37,6 +59,6 @@ def registration():
             db.session.add(new_user)
             db.session.commit()
             flash("You're in!", category="success")
-            redirect(url_for("main_views.index"))
+            return redirect(url_for("main_views.index"))
     
     return render_template("registration.html")

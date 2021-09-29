@@ -13,3 +13,7 @@ def search():
 @main.route("/about")
 def about():
     return "<h1>About<h1>"
+
+@app.route('/school')
+def student_hub():
+    pass
