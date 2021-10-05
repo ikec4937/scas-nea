@@ -17,7 +17,7 @@ def login():
             if check_password_hash(user.password, password):
                 flash("You're in!", category="success")
                 login_user(user, remember=True) #Remembers the user, till the server shuts down or the web server restarts
-                return redirect(url_for("views.home"))
+                return redirect(url_for("main_views.index"))
             else:
                 flash("Your password is incorrect", category="error")
         else:
@@ -25,7 +25,7 @@ def login():
     
     return render_template("login.html", user=current_user)
 
-@app.route("/logout-user")
+@auth.route("/logout-user")
 @login_required
 def logout():
     logout_user()

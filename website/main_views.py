@@ -14,6 +14,6 @@ def search():
 def about():
     return "<h1>About<h1>"
 
-@app.route('/school')
+@main.route('/school')
 def student_hub():
-    pass
+    return "<h1>School<h1>"
