@@ -17,7 +17,7 @@ class Application:
     student = db.relationship("Student")
     school = db.relationship("School")
 
-class Grade(db.model, UserMixin):
+class Grade(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     student = db.relationship("Student") #one-to-one with Student
     grade_name = db.Column(db.String(50))
@@ -47,7 +47,7 @@ class Student(db.Model, UserMixin):
     application = db.relationship("Application") #one to many relationship with the student's applications to multiple schools
     grade = db.relationship("Grade") #One-to-many relationship with the student's grades
 
-class Admin(db.model, UserMixin):
+class Admin(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     admin = db.relationship("User") #one-to-one relationship with the admin, if that's how it works.
     school = db.relationship("School") #one-to-one relationship with the admin's school
