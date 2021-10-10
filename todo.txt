@@ -1,1 +1,5 @@
 Work out how the database thing is going to work
+
+So apparently, to really implement the database thingy, I'll need to make two different user models. That's one for the student and one for the admin.
+
+The admin is the one to create the school so I believe I should try and start with that first.

@@ -42,7 +42,10 @@ def registration():
         password = request.form.get("pword")
         password2 = request.form.get("pword2")
     
-        if len(email) < 4:
+        user = User.query.filter_by(email=email).first()
+        if user: #If the user's email has been found in the database,
+            flash("Your email already exists with us", category="error")
+        elif len(email) < 4:
             flash("Email must be greater than 4 characters", category="error")
         elif len(firstname) < 2: 
             flash("You must have a name to enter the site", category="error")
