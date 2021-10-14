@@ -22,7 +22,7 @@ def create_app():
     app.register_blueprint(auth, url_prefix="/")
 
     #NEEDS TO BE LOADED AND RUN BEFORE DATABASE IS INITIALISED
-    from .models import User
+    from .models import Student, Admin
     
     create_database(app)
 
@@ -32,8 +32,12 @@ def create_app():
     login_manager.init_app(app)
 
     @login_manager.user_loader
-    def load_user(id):
-        return User.query.get(int(id))
+    def load_student(id):
+        return Student.query.get(int(id))
+    
+    @login_manager.user_loader
+    def load_admin(id):
+        return Admin.query.get(int(id))
 
     return app
 
