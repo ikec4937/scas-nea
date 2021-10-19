@@ -24,7 +24,7 @@ def login():
                 else:
                     flash("Your password is incorrect", category="error")
             else:
-                flash("Your email does not exist with us", category="error")
+                flash("Your student email does not exist with us", category="error")
         
         elif stat_check == "admin":
             admin = Admin.query.filter_by(email=email).first()
@@ -36,7 +36,7 @@ def login():
                 else:
                     flash("Your password is incorrect", category="error")
             else:
-                flash("Your email does not exist with us", category="error")
+                flash("Your admin email does not exist with us", category="error")
         
         else:
             flash("Are you a student or an admin?", category="error")

@@ -2,29 +2,17 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-<div class="container">
-  <h1>Index</h1>
-  <p class="important">
-    Welcome to my awesome homepage.
-  </p>
-  <div class="modal" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Register</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <p>Modal body text goes here.</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary">Save changes</button>
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        </div>
-      </div>
+<div style="background-image: url('https://www.willmottdixon.co.uk/asset/10645'); color: white;">
+  <div class="container">
+    <div class="jumbotron text-center">
+      <br>
+      <h1>SCAS - The Secondary School options site for you.</h1>
+      <p>"We" here at SCAS want to give secondary students the best and ideal way to make your post-16 and apply to your sixth-form or college. Sign Up now for the most quality experience!</p>
+      <br><br><br>
+      <a href="{{ url_for('main_views.registration') }}"><button type="button" class="btn btn-primary btn-lg btn-block">Register</button></a>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     </div>
   </div>
 </div>
+
 {% endblock %}

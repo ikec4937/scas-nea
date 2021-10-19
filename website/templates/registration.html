@@ -2,8 +2,9 @@
 {% block title %}Registration{% endblock %}
 
 {% block content %}
-<div>
+<div class="container text-center">
   <br>
+  <h1>Who are you registering as?</h1>  
   <a href="{{ url_for('auth_views.reg_admin') }}"><button type="button" class="btn btn-primary btn-lg btn-block">Register as Admin</button></a>
   <a href="{{ url_for('auth_views.reg_student') }}"><button type="button" class="btn btn-secondary btn-lg btn-block">Register as Student</button></a>
 </div>
