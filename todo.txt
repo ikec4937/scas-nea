@@ -1,1 +1,2 @@
-I had to delete initial database file to get login working. Now that I do have it working, I need to get the rest of it working and getting along and stuff. I think I have an idea on how to go about it, though.
+IT WORKS! Now it's literally just the Student grades.
+I also seriously need to touch up the homee screen of the website before Miss would dare take a look at mine lol.
