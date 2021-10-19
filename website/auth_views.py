@@ -38,7 +38,7 @@ def login():
             else:
                 flash("Your email does not exist with us", category="error")
         
-        elif stat_check == "":
+        else:
             flash("Are you a student or an admin?", category="error")
     
     return render_template("login.html", user=current_user)
