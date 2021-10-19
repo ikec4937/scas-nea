@@ -20,7 +20,7 @@ def login():
                 if check_password_hash(student.password, password): #Hash it. If the hashed passwords match:
                     flash("You're in as a student!", category="success")
                     login_user(student, remember=True) #Remembers the user, till the server shuts down or the web server restarts
-                    return redirect(url_for("post_login_views.student_hub"))
+                    return redirect(url_for("postlogin_views.student_hub"))
                 else:
                     flash("Your password is incorrect", category="error")
             else:
@@ -72,6 +72,7 @@ def reg_student():
             new_user = Student(email=email, firstname=firstname, lastname=lastname, password=generate_password_hash(password2, method="sha256"))
             db.session.add(new_user)
             db.session.commit()
+            login_user(user, remember=True)
             flash("You're in!", category="success")
             return redirect(url_for("main_views.index"))
     
@@ -101,6 +102,7 @@ def reg_admin():
             new_user = Admin(email=email, firstname=firstname, lastname=lastname, password=generate_password_hash(password2, method="sha256"))
             db.session.add(new_user)
             db.session.commit()
+            login_user(user, remember=True)
             flash("You're in!", category="success")
             return redirect(url_for("main_views.index"))
     
