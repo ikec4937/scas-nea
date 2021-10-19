@@ -7,16 +7,24 @@ from flask_login import login_user, login_required, logout_user, current_user
 auth = Blueprint("auth_views", __name__)
 
 @auth.route("/login", methods=["GET", "POST"])
-def login_student():
+def login():
     if request.method == "POST":
         email = request.form.get("email")
         password = request.form.get("pword")
 
-        user = Student.query.filter_by(email=email).first() #search through all emails
-        if user:
-            if check_password_hash(user.password, password):
-                flash("You're in!", category="success")
-                login_user(user, remember=True) #Remembers the user, till the server shuts down or the web server restarts
+        student = Student.query.filter_by(email=email).first() #search through all emails
+        admin = Admin.query.filter_by(email=email).first()
+        if student:
+            if check_password_hash(student.password, password):
+                flash("You're in as a student!", category="success")
+                login_user(student, remember=True) #Remembers the user, till the server shuts down or the web server restarts
+                return redirect(url_for("main_views.index"))
+            else:
+                flash("Your password is incorrect", category="error")
+        elif admin:
+            if check_password_hash(admin.password, password):
+                flash("You're in as an admin!", category="success")
+                login_user(admin, remember=True) #Remembers the user, till the server shuts down or the web server restarts
                 return redirect(url_for("main_views.index"))
             else:
                 flash("Your password is incorrect", category="error")
@@ -24,25 +32,6 @@ def login_student():
             flash("Your email does not exist with us", category="error")
     
     return render_template("login_student.html", user=current_user)
-
-@auth.route("/login", methods=["GET", "POST"])
-def login_admin():
-    if request.method == "POST":
-        email = request.form.get("email")
-        password = request.form.get("pword")
-
-        user = Admin.query.filter_by(email=email).first() #search through all emails
-        if user:
-            if check_password_hash(user.password, password):
-                flash("You're in!", category="success")
-                login_user(user, remember=True) #Remembers the user, till the server shuts down or the web server restarts
-                return redirect(url_for("main_views.index"))
-            else:
-                flash("Your password is incorrect", category="error")
-        else:
-            flash("Your email does not exist with us", category="error")
-    
-    return render_template("login_admin.html", user=current_user)
 
 @auth.route("/logout-user")
 @login_required

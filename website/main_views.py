@@ -4,7 +4,6 @@ from flask_login import login_required, current_user
 main = Blueprint("main_views", __name__)
 
 @main.route("/")
-@login_required
 def index():
     return render_template("index.html")
 
@@ -19,3 +18,7 @@ def about():
 @main.route('/school')
 def student_hub():
     return "<h1>School<h1>"
+
+@main.route("/main")
+def registration():
+    return render_template("registration.html")
