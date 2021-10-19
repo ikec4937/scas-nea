@@ -15,10 +15,6 @@ def search():
 def about():
     return "<h1>About<h1>"
 
-@main.route('/school')
-def student_hub():
-    return "<h1>School<h1>"
-
 @main.route("/main")
 def registration():
     return render_template("registration.html")

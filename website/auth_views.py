@@ -20,7 +20,7 @@ def login():
                 if check_password_hash(student.password, password): #Hash it. If the hashed passwords match:
                     flash("You're in as a student!", category="success")
                     login_user(student, remember=True) #Remembers the user, till the server shuts down or the web server restarts
-                    return redirect(url_for("main_views.index"))
+                    return redirect(url_for("post_login_views.student_hub"))
                 else:
                     flash("Your password is incorrect", category="error")
             else:
@@ -44,7 +44,6 @@ def login():
     return render_template("login.html", user=current_user)
 
 @auth.route("/logout-user")
-@login_required
 def logout():
     logout_user()
     return redirect(url_for("main_views.index"))

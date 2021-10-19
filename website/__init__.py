@@ -16,10 +16,12 @@ def create_app():
     #URLs from other files
     from .main_views import main
     from .auth_views import auth
+    from .postlogin_views import plog
 
     #Registering blueprints
     app.register_blueprint(main, url_prefix="/")
     app.register_blueprint(auth, url_prefix="/")
+    app.register_blueprint(plog, url_prefix="/")
 
     #NEEDS TO BE LOADED AND RUN BEFORE DATABASE IS INITIALISED
     from .models import Student, Admin
