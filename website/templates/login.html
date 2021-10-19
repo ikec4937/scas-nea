@@ -1,9 +1,10 @@
 {% extends "base.html" %}
-{% block title %}Admin Login{% endblock %}
+{% block title %}Login{% endblock %}
 
 {% block content %}
 <div class="container">
   <form method="POST">
+    <br>
     <h1>Login</h1>
     <div class="form-group">
       <label for="email">Email Address</label>
@@ -23,6 +24,32 @@
         id="pword" 
         name="pword" 
         placeholder="Enter Password" />
+    </div>
+
+    <div class="form-check">
+      <label class="form-check-label" for="loginas">
+        I am a student
+      </label>
+      <input 
+        class="form-check-input" 
+        type="radio" 
+        name="loginas" 
+        id="student" 
+        value="option1" >
+      
+    </div>
+    
+    <div class="form-check">
+      <label class="form-check-label" for="loginas">
+        I am an admin.
+      </label>
+      <input 
+        class="form-check-input" 
+        type="radio" 
+        name="loginas" 
+        id="admin" 
+        value="option2" >
+      
     </div>
 
     <br>

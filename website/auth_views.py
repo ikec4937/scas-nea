@@ -9,29 +9,39 @@ auth = Blueprint("auth_views", __name__)
 @auth.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
+        
         email = request.form.get("email")
         password = request.form.get("pword")
+        stat_check = request.form.get("loginas")
 
-        student = Student.query.filter_by(email=email).first() #search through all emails
-        admin = Admin.query.filter_by(email=email).first()
-        if student:
-            if check_password_hash(student.password, password):
-                flash("You're in as a student!", category="success")
-                login_user(student, remember=True) #Remembers the user, till the server shuts down or the web server restarts
-                return redirect(url_for("main_views.index"))
+        if stat_check == "student":
+            student = Student.query.filter_by(email=email).first() #search through all emails
+            if student: #If the student is found, look through the passwords of the users.
+                if check_password_hash(student.password, password): #Hash it. If the hashed passwords match:
+                    flash("You're in as a student!", category="success")
+                    login_user(student, remember=True) #Remembers the user, till the server shuts down or the web server restarts
+                    return redirect(url_for("main_views.index"))
+                else:
+                    flash("Your password is incorrect", category="error")
             else:
-                flash("Your password is incorrect", category="error")
-        elif admin:
-            if check_password_hash(admin.password, password):
-                flash("You're in as an admin!", category="success")
-                login_user(admin, remember=True) #Remembers the user, till the server shuts down or the web server restarts
-                return redirect(url_for("main_views.index"))
+                flash("Your email does not exist with us", category="error")
+        
+        elif stat_check == "admin":
+            admin = Admin.query.filter_by(email=email).first()
+            if admin:
+                if check_password_hash(admin.password, password):
+                    flash("You're in as an admin!", category="success")
+                    login_user(admin, remember=True) #Remembers the user, till the server shuts down or the web server restarts
+                    return redirect(url_for("main_views.index"))
+                else:
+                    flash("Your password is incorrect", category="error")
             else:
-                flash("Your password is incorrect", category="error")
-        else:
-            flash("Your email does not exist with us", category="error")
+                flash("Your email does not exist with us", category="error")
+        
+        elif stat_check == "":
+            flash("Are you a student or an admin?", category="error")
     
-    return render_template("login_student.html", user=current_user)
+    return render_template("login.html", user=current_user)
 
 @auth.route("/logout-user")
 @login_required

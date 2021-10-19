@@ -1,2 +1,7 @@
-IT WORKS! Now it's literally just the Student grades.
-I also seriously need to touch up the homee screen of the website before Miss would dare take a look at mine lol.
+I think I'll write up dates to note how far my data has come now.
+
+19/10/21 19:58
+Registration works. Login is not working for some odd reason. When I click on login, the issue is that the submit button isn't doing anything.
+
+TODO:
+Touch up the home screen of the website before Miss would dare take a look at mine lol.
