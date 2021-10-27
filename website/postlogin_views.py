@@ -6,7 +6,7 @@ plog = Blueprint("postlogin_views", __name__)
 @plog.route("/student-hub")
 @login_required
 def student_hub():
-    return render_template("student_hub.html", student=current_user.firstname)
+    return render_template("student_hub.html", user=current_user)
 
 @plog.route("/admin-hub")
 @login_required

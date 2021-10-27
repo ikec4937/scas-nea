@@ -19,7 +19,7 @@ def login():
             if student: #If the student is found, look through the passwords of the users.
                 if check_password_hash(student.password, password): #Hash it. If the hashed passwords match:
                     flash("You're in as a student!", category="success")
-                    login_user(student, remember=True) #Remembers the user, till the server shuts down or the web server restarts
+                    login_user(user=student, remember=True) #Remembers the user, till the server shuts down or the web server restarts
                     return redirect(url_for("postlogin_views.student_hub"))
                 else:
                     flash("Your password is incorrect", category="error")
@@ -31,7 +31,7 @@ def login():
             if admin:
                 if check_password_hash(admin.password, password):
                     flash("You're in as an admin!", category="success")
-                    login_user(admin, remember=True) #Remembers the user, till the server shuts down or the web server restarts
+                    login_user(user=admin, remember=True) #Remembers the user, till the server shuts down or the web server restarts
                     return redirect(url_for("main_views.index"))
                 else:
                     flash("Your password is incorrect", category="error")
@@ -76,7 +76,7 @@ def reg_student():
             flash("You're in!", category="success")
             return redirect(url_for("main_views.index"))
     
-    return render_template("reg_student.html")
+    return render_template("reg_student.html", user=current_user)
 
 @auth.route("/register-admin", methods=["GET", "POST"])
 def reg_admin():
@@ -106,4 +106,4 @@ def reg_admin():
             flash("You're in!", category="success")
             return redirect(url_for("main_views.index"))
     
-    return render_template("reg_admin.html")
+    return render_template("reg_admin.html", user=current_user)

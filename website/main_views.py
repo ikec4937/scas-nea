@@ -5,16 +5,16 @@ main = Blueprint("main_views", __name__)
 
 @main.route("/")
 def index():
-    return render_template("index.html")
+    return render_template("index.html", user=current_user)
 
 @main.route("/search")
 def search():
     return "<h1>Search<h1>"
 
-@main.route("/about")
-def about():
-    return "<h1>About<h1>"
+@main.errorhandler(404)
+def not_found(e):
+    return render_template("404_page.html")
 
 @main.route("/main")
 def registration():
-    return render_template("registration.html")
+    return render_template("registration.html", user=current_user)

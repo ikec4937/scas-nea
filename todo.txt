@@ -12,5 +12,11 @@ Touch up the home screen of the website before Miss would dare take a look at mi
 23:23
 Front page of SCAS looks more presentable, registration works, login works for both student and admin, redirecting is about to be tested. New module postlogin_views is about to be tested. I'm somewhat pleased so far.
 
+24/10/21
+20:18
+Since last log, there has been an issue where the login wouldn't truly register. This issue has just been fixed now. That's brilliant.
+
+27/10/21
+It has come to my attention that the log from three days ago was a lie. @login_required is currently my biggest nightmare.
 
 
