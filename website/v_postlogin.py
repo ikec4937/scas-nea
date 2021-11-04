@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, request, flash, jsonify
 from flask_login import login_required, current_user
 
-plog = Blueprint("postlogin_views", __name__)
+plog = Blueprint("v_postlogin", __name__)
 
 @plog.route("/student-hub")
 @login_required

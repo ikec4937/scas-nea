@@ -1,25 +1,53 @@
-from flask import Blueprint, render_template, request, flash, redirect, url_for
+from flask import ( #Didn't know you could do this. Cool.
+    Blueprint, 
+    render_template, 
+    request, 
+    flash, 
+    redirect, 
+    url_for,
+    session,
+    g
+)
+from werkzeug.security import (
+    generate_password_hash, 
+    check_password_hash 
+)
+"""from flask_login import (
+    login_user, 
+    login_required, 
+    logout_user, 
+    current_user
+)"""
 from .models import Student, Admin
 from . import db
-from werkzeug.security import generate_password_hash, check_password_hash
-from flask_login import login_user, login_required, logout_user, current_user
 
-auth = Blueprint("auth_views", __name__)
+auth = Blueprint("v_auth", __name__)
+
+@auth.before_request
+def before_request():
+    if "uID" in session:
+        student = Student.query.filter_by(email=email).first()
+        admin = Admin.query.filter_by(email=email).first()
+        if student:
+            g.user = student
+        elif admin:
+            g.user = admin
 
 @auth.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
-        
+        session.pop("uID", None)
+
         email = request.form.get("email")
         password = request.form.get("pword")
         stat_check = request.form.get("loginas")
 
         if stat_check == "student":
             student = Student.query.filter_by(email=email).first() #search through all emails
-            if student: #If the student is found, look through the passwords of the users.
-                if check_password_hash(student.password, password): #Hash it. If the hashed passwords match:
+            if student:
+                if check_password_hash(student.password, password): #If the student is found, look through the passwords of the users.
+                    session["uID"] = student.id
                     flash("You're in as a student!", category="success")
-                    login_user(user=student, remember=True) #Remembers the user, till the server shuts down or the web server restarts
                     return redirect(url_for("postlogin_views.student_hub"))
                 else:
                     flash("Your password is incorrect", category="error")
@@ -31,7 +59,7 @@ def login():
             if admin:
                 if check_password_hash(admin.password, password):
                     flash("You're in as an admin!", category="success")
-                    login_user(user=admin, remember=True) #Remembers the user, till the server shuts down or the web server restarts
+                    session["uID"] = admin.id #Remembers the user, till the server shuts down or the web server restarts
                     return redirect(url_for("main_views.index"))
                 else:
                     flash("Your password is incorrect", category="error")

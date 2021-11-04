@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, request, flash, jsonify
 from flask_login import login_required, current_user
 
-main = Blueprint("main_views", __name__)
+main = Blueprint("v_main", __name__)
 
 @main.route("/")
 def index():

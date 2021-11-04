@@ -14,9 +14,9 @@ def create_app():
     db.init_app(app)
     
     #URLs from other files
-    from .main_views import main
-    from .auth_views import auth
-    from .postlogin_views import plog
+    from .v_main import main
+    from .v_auth import auth
+    from .v_postlogin import plog
 
     #Registering blueprints
     app.register_blueprint(main, url_prefix="/")
