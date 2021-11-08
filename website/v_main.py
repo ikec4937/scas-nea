@@ -5,7 +5,7 @@ main = Blueprint("v_main", __name__)
 
 @main.route("/")
 def index():
-    return render_template("index.html", user=current_user)
+    return render_template("index.html")
 
 @main.route("/search")
 def search():
@@ -17,4 +17,4 @@ def not_found(e):
 
 @main.route("/main")
 def registration():
-    return render_template("registration.html", user=current_user)
+    return render_template("registration.html")

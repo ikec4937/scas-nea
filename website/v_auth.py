@@ -3,10 +3,8 @@ from flask import ( #Didn't know you could do this. Cool.
     render_template, 
     request, 
     flash, 
-    redirect, 
-    url_for,
-    session,
-    g
+    redirect, url_for,
+    session, g
 )
 from werkzeug.security import (
     generate_password_hash, 
@@ -23,16 +21,6 @@ from . import db
 
 auth = Blueprint("v_auth", __name__)
 
-@auth.before_request
-def before_request():
-    if "uID" in session:
-        student = Student.query.filter_by(email=email).first()
-        admin = Admin.query.filter_by(email=email).first()
-        if student:
-            g.user = student
-        elif admin:
-            g.user = admin
-
 @auth.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -48,7 +36,7 @@ def login():
                 if check_password_hash(student.password, password): #If the student is found, look through the passwords of the users.
                     session["uID"] = student.id
                     flash("You're in as a student!", category="success")
-                    return redirect(url_for("postlogin_views.student_hub"))
+                    return redirect(url_for("v_postlogin.student_hub"))
                 else:
                     flash("Your password is incorrect", category="error")
             else:
@@ -60,7 +48,7 @@ def login():
                 if check_password_hash(admin.password, password):
                     flash("You're in as an admin!", category="success")
                     session["uID"] = admin.id #Remembers the user, till the server shuts down or the web server restarts
-                    return redirect(url_for("main_views.index"))
+                    return redirect(url_for("v_main.index"))
                 else:
                     flash("Your password is incorrect", category="error")
             else:
@@ -69,12 +57,12 @@ def login():
         else:
             flash("Are you a student or an admin?", category="error")
     
-    return render_template("login.html", user=current_user)
+    return render_template("login.html")
 
 @auth.route("/logout-user")
 def logout():
-    logout_user()
-    return redirect(url_for("main_views.index"))
+    session.pop("uID", None)
+    return redirect(url_for("v_main.index"))
 
 @auth.route("/register-student", methods=["GET", "POST"])
 def reg_student():
@@ -100,11 +88,11 @@ def reg_student():
             new_user = Student(email=email, firstname=firstname, lastname=lastname, password=generate_password_hash(password2, method="sha256"))
             db.session.add(new_user)
             db.session.commit()
-            login_user(user, remember=True)
+            session["uID"] = user.id
             flash("You're in!", category="success")
-            return redirect(url_for("main_views.index"))
+            return redirect(url_for("v_main.index"))
     
-    return render_template("reg_student.html", user=current_user)
+    return render_template("reg_student.html")
 
 @auth.route("/register-admin", methods=["GET", "POST"])
 def reg_admin():
@@ -130,8 +118,8 @@ def reg_admin():
             new_user = Admin(email=email, firstname=firstname, lastname=lastname, password=generate_password_hash(password2, method="sha256"))
             db.session.add(new_user)
             db.session.commit()
-            login_user(user, remember=True)
+            session["uID"] = user.id
             flash("You're in!", category="success")
-            return redirect(url_for("main_views.index"))
+            return redirect(url_for("v_main.index"))
     
-    return render_template("reg_admin.html", user=current_user)
+    return render_template("reg_admin.html")

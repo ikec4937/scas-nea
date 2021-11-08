@@ -1,14 +1,23 @@
-from flask import Blueprint, render_template, request, flash, jsonify
-from flask_login import login_required, current_user
+from flask import (
+    Blueprint, 
+    render_template, 
+    redirect, url_for,
+    request, flash, 
+    jsonify, 
+    session
+)
+#from flask_login import login_required, current_user
 
 plog = Blueprint("v_postlogin", __name__)
 
 @plog.route("/student-hub")
-@login_required
 def student_hub():
-    return render_template("student_hub.html", user=current_user)
+    if session["uID"]:
+        return render_template("student_hub.html")
+    else:
+        return redirect(url_for("v_main.index"))
+
 
 @plog.route("/admin-hub")
-@login_required
 def admin_hub():
     pass

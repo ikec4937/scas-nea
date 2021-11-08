@@ -28,6 +28,7 @@ def create_app():
     
     create_database(app)
 
+    """
     #Login Manager
     login_manager = LoginManager()
     login_manager.login_view = "auth_views.login"
@@ -40,6 +41,7 @@ def create_app():
     @login_manager.user_loader
     def load_admin(id):
         return Admin.query.get(int(id))
+    """
 
     return app
 
