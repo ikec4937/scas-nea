@@ -28,3 +28,6 @@ I'll try and see if it has changed in recent years. If it hasn't, lord help me.
 Attempting to use sessions to log in because flask-login seems to despise me and the thought of logging in with multiple types of users.
 For simplicity and looking nice, I've renamed the files to more neatly separate the views. I am content with the new naming scheme.
 
+9/11/2021
+9:37
+Development is going more smoother with the implementation of sessions in flask, especially compared to flask-login. It's as though that thing was futile to begin with. The gitignore file doesn't look like it's working, though.
