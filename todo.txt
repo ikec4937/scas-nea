@@ -31,3 +31,5 @@ For simplicity and looking nice, I've renamed the files to more neatly separate 
 9/11/2021
 9:37
 Development is going more smoother with the implementation of sessions in flask, especially compared to flask-login. It's as though that thing was futile to begin with. The gitignore file doesn't look like it's working, though.
+
+TODO:

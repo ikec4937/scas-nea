@@ -47,7 +47,7 @@ def login():
                     flash("You're in as an admin!", category="success")
                     session["logged_in"] = True
                     session["is_student"] = False
-                    session["uID"] = json.dumps(admin.__dict__)
+                    session["uID"] = admin.serialise()
                     return redirect(url_for("v_main.index"))
                 else:
                     flash("Your password is incorrect", category="error")
