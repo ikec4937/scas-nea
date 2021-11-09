@@ -19,12 +19,28 @@ class Admin(db.Model, UserMixin):
     firstname = db.Column(db.String(150))
     lastname = db.Column(db.String(150))
 
+    def serialise(self):
+        return {
+            'id': self.id,
+            'email': self.email,
+            'firstname': self.firstname,
+            'lastname': self.lastname
+        }
+
 class Student(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(150), unique=True)
     password = db.Column(db.String(150))
     firstname = db.Column(db.String(150))
     lastname = db.Column(db.String(150))
+
+    def serialise(self):
+        return {
+            'id': self.id,
+            'email': self.email,
+            'firstname': self.firstname,
+            'lastname': self.lastname
+        }
     
     """grades = db.relationship("Grade", backref="student")
     tags = db.relationship("Tags", backref="student")

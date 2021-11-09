@@ -1,5 +1,5 @@
 {% extends "base.html" %} 
-{% block title %}Welcome, {{user.firstname}}!{% endblock %}
+{% block title %}Welcome, {{session["uID"].id}}!{% endblock %}
 
 {% block content %}
 

@@ -6,18 +6,12 @@ from flask import ( #Didn't know you could do this. Cool.
     redirect, url_for,
     session, g
 )
-from werkzeug.security import (
-    generate_password_hash, 
-    check_password_hash 
-)
-"""from flask_login import (
-    login_user, 
-    login_required, 
-    logout_user, 
-    current_user
-)"""
+from werkzeug.security import (generate_password_hash, check_password_hash)
+#from flask_login import (login_user, login_required, logout_user, current_user)
 from .models import Student, Admin
 from . import db
+
+import json
 
 auth = Blueprint("v_auth", __name__)
 
@@ -33,8 +27,12 @@ def login():
         if stat_check == "student":
             student = Student.query.filter_by(email=email).first() #search through all emails
             if student:
+                print(student)
                 if check_password_hash(student.password, password): #If the student is found, look through the passwords of the users.
-                    session["uID"] = student.id
+                    session["logged_in"] = True #The user is logged in
+                    session["is_student"] = True #...as a student
+                    session["uID"] = student.serialise() #Their first name, last name and email is saved.
+                    print(session["uID"])
                     flash("You're in as a student!", category="success")
                     return redirect(url_for("v_postlogin.student_hub"))
                 else:
@@ -47,7 +45,9 @@ def login():
             if admin:
                 if check_password_hash(admin.password, password):
                     flash("You're in as an admin!", category="success")
-                    session["uID"] = admin.id #Remembers the user, till the server shuts down or the web server restarts
+                    session["logged_in"] = True
+                    session["is_student"] = False
+                    session["uID"] = json.dumps(admin.__dict__)
                     return redirect(url_for("v_main.index"))
                 else:
                     flash("Your password is incorrect", category="error")
@@ -62,6 +62,8 @@ def login():
 @auth.route("/logout-user")
 def logout():
     session.pop("uID", None)
+    session.pop("is_student", None)
+    session["logged_in"] = False
     return redirect(url_for("v_main.index"))
 
 @auth.route("/register-student", methods=["GET", "POST"])
@@ -88,7 +90,7 @@ def reg_student():
             new_user = Student(email=email, firstname=firstname, lastname=lastname, password=generate_password_hash(password2, method="sha256"))
             db.session.add(new_user)
             db.session.commit()
-            session["uID"] = user.id
+            session["uID"] = [new_user.id, firstname, lastname, email]
             flash("You're in!", category="success")
             return redirect(url_for("v_main.index"))
     
