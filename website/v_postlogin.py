@@ -6,20 +6,27 @@ from flask import (
     jsonify, 
     session
 )
-#from flask_login import login_required, current_user
 
 plog = Blueprint("v_postlogin", __name__)
 
-@plog.route("/user-hub")
-def the_hub():
+@plog.route("/student-hub")
+def student_hub():
     if session["logged_in"]: 
         if session["is_student"]:
-            return render_template("student_hub.html")
+            return render_template("hub_student.html") #alphabetical order will look nice, this way
         else:
-            return render_template("admin_hub.html")
+            return redirect(url_for("v_postlogin.admin_hub"))
     else:
-        return redirect(url_for("v_main.index"))
+        flash("You need to log in or register to access this page", category="error")
+        return redirect(url_for("v_auth.login"))
 
 @plog.route("/admin-hub")
 def admin_hub():
-    pass
+    if session["logged_in"]: 
+        if session["is_student"]:
+            return redirect(url_for("v_postlogin.student_hub"))
+        else:
+            return render_template("hub_admin.html")
+    else:
+        flash("You need to log in or register to access this page", category="error")
+        return redirect(url_for("v_auth.login"))
