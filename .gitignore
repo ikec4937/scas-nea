@@ -1,2 +1,5 @@
-/website/__pycache__
-database.db
+website/__pycache__/__init__.cpython-38.pyc
+website/__pycache__/models.cpython-38.pyc
+website/__pycache__/v_auth.cpython-38.pyc
+website/__pycache__/v_main.cpython-38.pyc
+website/__pycache__/v_postlogin.cpython-38.pyc
