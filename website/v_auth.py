@@ -7,7 +7,6 @@ from flask import ( #Didn't know you could do this. Cool.
     session, g
 )
 from werkzeug.security import (generate_password_hash, check_password_hash)
-#from flask_login import (login_user, login_required, logout_user, current_user)
 from .models import Student, Admin
 from . import db
 
@@ -34,7 +33,7 @@ def login():
                     session["uID"] = student.serialise() #Their first name, last name and email is saved.
                     print(session["uID"])
                     flash("You're in as a student!", category="success")
-                    return redirect(url_for("v_postlogin.student_hub"))
+                    return redirect(url_for("v_postlogin.the_hub"))
                 else:
                     flash("Your password is incorrect", category="error")
             else:
@@ -48,7 +47,7 @@ def login():
                     session["logged_in"] = True
                     session["is_student"] = False
                     session["uID"] = admin.serialise()
-                    return redirect(url_for("v_main.index"))
+                    return redirect(url_for("v_postlogin.the_hub"))
                 else:
                     flash("Your password is incorrect", category="error")
             else:

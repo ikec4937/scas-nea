@@ -1,7 +1,6 @@
 from flask import Flask, Blueprint
 from flask_sqlalchemy import SQLAlchemy
 from os import path
-#from flask_login import LoginManager
 
 db = SQLAlchemy()
 DB_NAME = "database.db"
@@ -27,21 +26,6 @@ def create_app():
     from .models import Student, Admin
     
     create_database(app)
-
-    """
-    #Login Manager
-    login_manager = LoginManager()
-    login_manager.login_view = "auth_views.login"
-    login_manager.init_app(app)
-
-    @login_manager.user_loader
-    def load_student(id):
-        return Student.query.get(int(id))
-    
-    @login_manager.user_loader
-    def load_admin(id):
-        return Admin.query.get(int(id))
-    """
 
     return app
 

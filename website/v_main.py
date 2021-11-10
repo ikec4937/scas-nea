@@ -1,5 +1,4 @@
 from flask import Blueprint, render_template, request, flash, jsonify
-from flask_login import login_required, current_user
 
 main = Blueprint("v_main", __name__)
 
@@ -10,6 +9,10 @@ def index():
 @main.route("/search")
 def search():
     return "<h1>Search<h1>"
+
+@main.route("/not-yours")
+def main():
+    return "<h1>This file is not yours</h1>"
 
 @main.errorhandler(404)
 def not_found(e):

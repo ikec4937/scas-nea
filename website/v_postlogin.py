@@ -10,13 +10,15 @@ from flask import (
 
 plog = Blueprint("v_postlogin", __name__)
 
-@plog.route("/student-hub")
-def student_hub():
-    if session["logged_in"] and session["is_student"]:
-        return render_template("student_hub.html")
+@plog.route("/user-hub")
+def the_hub():
+    if session["logged_in"]: 
+        if session["is_student"]:
+            return render_template("student_hub.html")
+        else:
+            return render_template("admin_hub.html")
     else:
         return redirect(url_for("v_main.index"))
-
 
 @plog.route("/admin-hub")
 def admin_hub():
