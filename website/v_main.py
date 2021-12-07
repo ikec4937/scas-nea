@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, flash, jsonify
+from flask import Blueprint, render_template, request, flash, jsonify, session, redirect, url_for
 
 main = Blueprint("v_main", __name__)
 
@@ -10,14 +10,10 @@ def index():
 def search():
     return "<h1>Search<h1>"
 
-@main.route("/not-yours")
-def main():
-    return "<h1>This file is not yours</h1>"
-
 @main.errorhandler(404)
 def not_found(e):
     return render_template("404_page.html")
 
-@main.route("/main")
+@main.route("/register")
 def registration():
     return render_template("registration.html")

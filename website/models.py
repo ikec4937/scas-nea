@@ -4,12 +4,7 @@ from sqlalchemy.sql import func
 
 """
 Now begs the question: How will the database be modeled?
-
-Application:
-- Application ID
-- User ID
-- School ID
-- User Grades
+Application Model can be found on the dbdiagram.io
 """
 
 class Admin(db.Model, UserMixin):
@@ -33,7 +28,7 @@ class Student(db.Model, UserMixin):
     password = db.Column(db.String(150))
     firstname = db.Column(db.String(150))
     lastname = db.Column(db.String(150))
-
+    
     def serialise(self):
         return {
             'id': self.id,

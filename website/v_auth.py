@@ -33,7 +33,7 @@ def login():
                     session["uID"] = student.serialise() #Their first name, last name and email is saved.
                     print(session["uID"])
                     flash("You're in as a student!", category="success")
-                    return redirect(url_for("v_postlogin.the_hub"))
+                    return redirect(url_for("v_postlogin.student_hub"))
                 else:
                     flash("Your password is incorrect", category="error")
             else:
@@ -47,7 +47,7 @@ def login():
                     session["logged_in"] = True
                     session["is_student"] = False
                     session["uID"] = admin.serialise()
-                    return redirect(url_for("v_postlogin.the_hub"))
+                    return redirect(url_for("v_postlogin.admin_hub"))
                 else:
                     flash("Your password is incorrect", category="error")
             else:

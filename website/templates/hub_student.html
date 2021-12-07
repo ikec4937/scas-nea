@@ -1,13 +1,16 @@
 {% extends "base.html" %} 
-{% block title %}Welcome, {{session["uID"].id}}!{% endblock %}
+{% block title %}{{session["uID"].firstname}}'s student hub{% endblock %}
 
 {% block content %}
 
 <div class="container">
+  <br>
+  <div class=jumbotron>
+    <h1>Hello, {{session["uID"].firstname}}! Welcome to SCAS!</h1>
+  </div>
   <div class="row">
     <div class="col-sm-4">
       <h3>Search for your school</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
       <div class="input-group">
         <div class="form-outline">
           <input type="search" id="search" class="form-control" />
