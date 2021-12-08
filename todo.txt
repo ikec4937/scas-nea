@@ -47,5 +47,21 @@ It's been a while. So much so that I have no idea why the registration file is n
 9:39
 It started working again. I don't know what I've done.
 
+19:55
+It's stopped again, but I know what the problem is with it.
+It doesn't understand what session "logged_in" is and it's suddenly being used in an if statement, so the system (panics?) and sends back an error.
+Before the user logs in, I need to set the "logged_in" session to False so that the system knows what to so when the problem eventually arises.
+I'll attempt putting it in the __init__.py file. Though I'm not sure if that's the best idea.
+
+20:03
+That was the worst idea I've ever had in my entire life.
+Where the session goes instead, I don't know. I'll try and make another function that links to a new home screen.
+
+20:14
+It works. What's the student going to look at as soon as I logged in.
+There always has been the option to manage the schools they would've looked into and the grades they have achieved. What's that going to look like? Should there really be a link for that or should everything be on one page?
+I understand that the student hub is a student hub for a reason...
+I've had an idea to make the three columns dedicated for Schools, Grades and Tags. All of these have always been the focus anyway.
+
 TODO:
 Tags.

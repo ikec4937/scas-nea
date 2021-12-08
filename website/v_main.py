@@ -4,6 +4,11 @@ main = Blueprint("v_main", __name__)
 
 
 @main.route("/")
+def startup():
+    session["logged_in"] = False
+    return redirect(url_for("v_main.index"))
+
+@main.route("/home")
 def index():
     return render_template("index.html")
 
