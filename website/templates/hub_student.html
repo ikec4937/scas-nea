@@ -8,30 +8,26 @@
   <div class=jumbotron>
     <h1>Hello, {{session["uID"].firstname}}! Welcome to SCAS!</h1>
   </div>
-  <div class="row">
-    <div class="col-sm-4">
-      <h3>Search for your school</h3>
-      <div class="input-group">
-        <div class="form-outline">
-          <input type="search" id="search" class="form-control" />
-          <label class="form-label" for="search">Search</label>
-        </div>
-        <button type="button" class="btn btn-primary">
-          <i class="fas fa-search"></i>
-        </button>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <h3>Set up your account</h3>
-      <p>Enter your grades (and some things about yourself)</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-    </div>
-    <div class="col-sm-4">
-      <h3>Column 3</h3>        
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+  <div>
+    <h3>Search for your school</h3>
+    <div class="input-group">
+      <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+      aria-describedby="search-addon" />
+      <button type="button" class="btn btn-outline-primary">search</button>
     </div>
   </div>
-
+  <br>
+  <div class="row">
+    <div class="col-sm-6">
+      <h3>Manage your grades</h3>
+      <p>Manage grades for your school grades (and some things about yourself)</p>
+      <button class="btn btn-primary text-center">Enter Grades</button>
+    </div>
+    <div class="col-sm-6">
+      <h3>Manage Tags</h3>        
+      <p>These help taylor both the kinds of schools you're looking for and the kinds of student schools are looking for.</p>
+      <button class="btn btn-primary text-center">Enter Tags</button>
+    </div>
+  </div>
 
 {% endblock %}
