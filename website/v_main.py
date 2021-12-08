@@ -2,6 +2,7 @@ from flask import Blueprint, render_template, request, flash, jsonify, session, 
 
 main = Blueprint("v_main", __name__)
 
+
 @main.route("/")
 def index():
     return render_template("index.html")
@@ -16,4 +17,7 @@ def not_found(e):
 
 @main.route("/register")
 def registration():
-    return render_template("registration.html")
+    if session["logged_in"]:
+        return redirect(url_for("v_postlogin.student_hub"))
+    else:
+        return render_template("registration.html")

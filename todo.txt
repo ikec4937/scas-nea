@@ -40,7 +40,12 @@ I might make up a one-to-many relationship with the student and the tag, then wi
 Idk, I can only send a working product. That's what's supposed to happen rn.
 
 7/12/21
-It's been a while. So much so that I have no idea why the registration file is not working anymore. It definitely should be working by now
+15:31
+It's been a while. So much so that I have no idea why the registration file is not working anymore. It definitely should be working by now.
+
+8/12/21
+9:39
+It started working again. I don't know what I've done.
 
 TODO:
 Tags.
