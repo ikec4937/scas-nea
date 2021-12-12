@@ -82,5 +82,15 @@ How do you code that? How on earth do you code a youtube comment?
 22:41
 I'll upload my content to git.
 
+22:54
+There needs to be a way to make sure the login is valid without making else statements that lead to the login page at every other line. It's getting really annoying.
+
+23:10
+I've entered settings to print the student's details, for the sake of debugging. It's been long fixed but insanely dangerous. I'd better update it right now.
+
 TODO:
 Tags.
+Grades management
+Admin hub
+School management for the admin
+Application management

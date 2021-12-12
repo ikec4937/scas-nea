@@ -30,7 +30,19 @@ def manage_grades():
 
 @plog.route("/student/edit-schools")
 def student_edit_school():
-    return render_template("edit_school_s.html")
+    if session["logged_in"] and session["is_student"]:
+        return render_template("edit_school_s.html")
+    else:
+        flash("You are not logged in as a student to access this page", category="error")
+        return redirect(url_for("v_auth.login"))
+
+@plog.route("/student/manage-application")
+def student_manage_application():
+    if session["logged_in"] and session["is_student"]:
+        return render_template("mang_application.html")
+    else:
+        flash("You are not logged in as a student to access this page", category="error")
+        return redirect(url_for("v_auth.login"))
 
 @plog.route("/admin/hub")
 def admin_hub():

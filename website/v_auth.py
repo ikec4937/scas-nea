@@ -26,12 +26,10 @@ def login():
         if stat_check == "student":
             student = Student.query.filter_by(email=email).first() #search through all emails
             if student:
-                print(student)
                 if check_password_hash(student.password, password): #If the student is found, look through the passwords of the users.
                     session["logged_in"] = True #The user is logged in
                     session["is_student"] = True #...as a student
                     session["uID"] = student.serialise() #Their first name, last name and email is saved.
-                    print(session["uID"])
                     flash("You're in as a student!", category="success")
                     return redirect(url_for("v_postlogin.student_hub"))
                 else:
