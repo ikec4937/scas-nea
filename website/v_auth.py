@@ -89,6 +89,8 @@ def reg_student():
             new_user = Student(email=email, firstname=firstname, lastname=lastname, password=generate_password_hash(password2, method="sha256"))
             db.session.add(new_user)
             db.session.commit()
+            session["logged_in"] = True
+            session["is_student"] = False
             session["uID"] = [new_user.id, firstname, lastname, email]
             flash("You're in!", category="success")
             return redirect(url_for("v_postlogin.student_hub"))
@@ -119,6 +121,8 @@ def reg_admin():
             new_user = Admin(email=email, firstname=firstname, lastname=lastname, password=generate_password_hash(password2, method="sha256"))
             db.session.add(new_user)
             db.session.commit()
+            session["logged_in"] = True
+            session["is_student"] = False
             session["uID"] = [new_user.id, firstname, lastname, email]
             flash("You're in!", category="success")
             return redirect(url_for("v_postlogin.admin_hub"))

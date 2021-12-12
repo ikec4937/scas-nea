@@ -63,5 +63,24 @@ There always has been the option to manage the schools they would've looked into
 I understand that the student hub is a student hub for a reason...
 I've had an idea to make the three columns dedicated for Schools, Grades and Tags. All of these have always been the focus anyway.
 
+10/12/21
+19:23
+I don't believe the post-login functions for the student and the admin should be in the same place. I'm not sure if that's my priority at the moment, anyway. I might deal with that later but I've made a note of it. I have the student hub to take care of.
+I've already made the edit grades and esit school files.
+
+19:51
+Upon making the html, they've made the idea that the enter grades system will require a lot of Javascript. I hate Javascript.
+
+20:50
+This is hard. I know what I want to do then
+
+12/12/21
+22:19
+It appears I haven't finished my sentence from yesterday: I know what I want to do but no idea how to do it. It's a little like a tag system meaning the student enters the course they did and what grade they got from it then when they hit enter, they see what they've entered above the input area. Think of it like posting a youtube comment, for example.
+How do you code that? How on earth do you code a youtube comment?
+
+22:41
+I'll upload my content to git.
+
 TODO:
 Tags.
