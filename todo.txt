@@ -92,6 +92,15 @@ I've entered settings to print the student's details, for the sake of debugging.
 9:31
 My CS teacher had taken a look at my work and appears satisfied. What next, she says, is SQL for practically everything else that's backend. I had never thought of it like that.
 
+10:34
+How do you do a dropdown? I'm copy-pasting from the bootstrap website itself btw.
+
+12:34
+The CSS and JS is painfully inconsistent everywhere. I'm typing in Bootstrap4 on a Bootstrap5 project asking Bootstrap4 Javascript to do what I want from Bootstrap5. You know how much sense this makes? If not, that's good. I've settled on using 5 for everything from here on.
+
+12:46
+Oh yes, it's all coming together...
+
 TODO:
 Tags.
 Grades management
