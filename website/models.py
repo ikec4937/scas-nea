@@ -1,3 +1,4 @@
+from sqlalchemy.orm import relationship
 from . import db
 from flask_login import UserMixin
 from sqlalchemy.sql import func
@@ -8,6 +9,8 @@ Application Model can be found on the dbdiagram.io
 """
 
 class Admin(db.Model, UserMixin):
+    __tablename__ = "admin"
+    
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(150), unique=True)
     password = db.Column(db.String(150))
@@ -23,11 +26,15 @@ class Admin(db.Model, UserMixin):
         }
 
 class Student(db.Model, UserMixin):
+    __tablename__ = "student"
+    
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(150), unique=True)
     password = db.Column(db.String(150))
     firstname = db.Column(db.String(150))
     lastname = db.Column(db.String(150))
+
+    grades = db.relationship("Grade")
     
     def serialise(self):
         return {
@@ -35,17 +42,19 @@ class Student(db.Model, UserMixin):
             'email': self.email,
             'firstname': self.firstname,
             'lastname': self.lastname
-        }
+        } 
     
-    """grades = db.relationship("Grade", backref="student")
-    tags = db.relationship("Tags", backref="student")
+    """tags = db.relationship("Tags", backref="student")
     application_id = db.Column(db.Integer, db.ForeignKey("application.id"))"""
 
 class Grade(db.Model, UserMixin):
+    __tablename__ = "grades"
+    
     id = db.Column(db.Integer, primary_key=True)
     subject = db.Column(db.String(50))
     grade_score = db.Column(db.String(15))
-    #student_id = db.Column(db.Integer, db.ForeignKey("student.id"))
+    
+    student_id = db.Column(db.Integer, db.ForeignKey("student.id"))
 
 class Application(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
