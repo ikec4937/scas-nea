@@ -101,6 +101,25 @@ The CSS and JS is painfully inconsistent everywhere. I'm typing in Bootstrap4 on
 12:46
 Oh yes, it's all coming together...
 
+8/1/2022
+18:46
+It's been far too long. I'm looking for a way to replace text using Jinja rather than Javascript.
+Otherwise, I've found ways to replace a little bit of text with Javascript. I should consider either continue with Javascript or use Jinja.
+Now that I'm actually typing this out, I'm having second thoughts
+19:06
+This might be overkill, but should I use a json file to replace the kinds of data I want there?
+19:08
+Found some code on the internet. All I have to do with it now is to translate what's there into the code that I want working on my site.
+19:11
+What on earth? My Javascript code is suddenly gone?!
+
+11/1/21
+14:31
+I've been mucking about with the html and javascript for far too long. I've gotten too bored.
+14:54
+For the first time in forever, I've done some actual work in making the grades system
+There's still more to do. A lot more to do.
+
 TODO:
 Tags.
 Grades management

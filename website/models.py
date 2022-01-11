@@ -52,9 +52,19 @@ class Grade(db.Model, UserMixin):
     
     id = db.Column(db.Integer, primary_key=True)
     subject = db.Column(db.String(50))
+    coursetype = db.Column(db.String(50))
     grade_score = db.Column(db.String(15))
     
     student_id = db.Column(db.Integer, db.ForeignKey("student.id"))
+
+    def serialise(self):
+        return {
+            'id': self.id,
+            'subject': self.subject,
+            'coursetype': self.coursetype,
+            'grade_score': self.grade_score,
+            'student_id': self.student_id
+        }
 
 class Application(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
