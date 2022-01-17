@@ -7,15 +7,23 @@
   <br>
   <h1>Manage your grades</h1>
 
+  <div>
+    <select class="form-select orm-select-padding-0-sm" aria-label="Wait, why is it so big???">
+      <option selected>Course</option>
+      <option value="GCSE">GCSE</option>
+      <option value="BTEC">BTEC</option>
+      <option value="Other">Other</option>
+    </select>
+  </div>
+  <div>
+    <button class="btn btn-outline-secondary dropdown-toggle" 
+    id="gradetype" type="button" 
+    data-toggle="dropdown" aria-haspopup="true" 
+    aria-expanded="false">Grade</button>
+  </div>
   <div class="input-group mb-3">
-    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="coursetype">Course</button>
-    <ul class="dropdown-menu" >
-      <li id="gcse" onclick="change_coursetype('GCSE');"><a class="dropdown-item" href="#">GCSE</a></li>
-      <li id="btec" onclick="change_coursetype('BTEC');"><a class="dropdown-item" href="#">BTEC</a></li>
-      <li><hr class="dropdown-divider"></li>
-      <li id="other" onclick="change_coursetype('Other');"><a class="dropdown-item" href="#">Other</a></li>
-    </ul>
-    <input type="text" class="form-control" aria-label="Text input with dropdown button">
+        
+    <input value="subject" type="text" class="form-control" aria-label="Text input with dropdown button">
     <div class="input-group-append">
       <!--This is going to vary drastically, depending on the kind of course that the student is studying.-->
       <button class="btn btn-outline-secondary dropdown-toggle" id="gradetype" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Grade</button>
