@@ -113,12 +113,26 @@ Found some code on the internet. All I have to do with it now is to translate wh
 19:11
 What on earth? My Javascript code is suddenly gone?!
 
-11/1/21
+11/1/22
 14:31
 I've been mucking about with the html and javascript for far too long. I've gotten too bored.
 14:54
 For the first time in forever, I've done some actual work in making the grades system
 There's still more to do. A lot more to do.
+19:06
+A little out of line but I want to add a hotfix straight to the main registration to the student and the admin.
+Disregarding the one that's already there wouldn't be ideal... or would it? It could work!
+19:13
+It does! How do I keep it on the side I want rather than the one by default?
+19:25
+Did it.
+
+17/1/22 13:58
+Didn't realise I could work on flask without the need for Internet. This changes so much. I'll be on it far more.
+14:06
+Registration marked me as signed in when it wasn't supposed to. Deleted leftover code.
+14:09
+Tell me, Ikechukwu. How are you going to fix problems with your code without the GOD DAMN INTERNET?
 
 TODO:
 Tags.
