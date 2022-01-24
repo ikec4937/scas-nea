@@ -1,1 +1,142 @@
-Work out how the database thing is going to work
+I think I'll write up dates to note how far my data has come now.
+
+19/10/21 
+19:58
+Registration works. It required the initial database.db file to be deleted because it was made with the now-gone "user" model. Login is not working for some odd reason. When I click on login, the issue is that the submit button isn't doing anything.
+
+22:13
+Login works completely. The values selected in the html page weren't "student" and "admin" like they should be, but instead "option1" and "option2". That had to be changed.
+TODO (DONE):
+Touch up the home screen of the website before Miss would dare take a look at mine lol.
+
+23:23
+Front page of SCAS looks more presentable, registration works, login works for both student and admin, redirecting is about to be tested. New module postlogin_views is about to be tested. I'm somewhat pleased so far.
+
+24/10/21
+20:18
+Since last log, there has been an issue where the login wouldn't truly register. This issue has just been fixed now. That's brilliant.
+
+27/10/21
+(I didn't write a time, here)
+It has come to my attention that the log from three days ago was a lie. @login_required is currently the bane of my existence.
+
+15:54
+So, it has come to my attention that Flask-login has no understanding on how to manage different types of users, though that's information I can only see on a Stack Overflow forum from 8 years ago.
+I'll try and see if it has changed in recent years. If it hasn't, lord help me.
+
+4/11/21
+Attempting to use sessions to log in because flask-login seems to despise me and the thought of logging in with multiple types of users.
+For simplicity and looking nice, I've renamed the files to more neatly separate the views. I am content with the new naming scheme.
+
+9/11/21
+9:37
+Development is going more smoother with the implementation of sessions in flask, especially compared to flask-login. It's as though that thing was futile to begin with. The gitignore file doesn't look like it's working, though.
+
+16/11/21
+14:55
+I need to know how on earth I'm going to set up my tags. So how?
+I might make up a one-to-many relationship with the student and the tag, then with the school and the tag. If I do, what'll happen?
+
+Idk, I can only send a working product. That's what's supposed to happen rn.
+
+7/12/21
+15:31
+It's been a while. So much so that I have no idea why the registration file is not working anymore. It definitely should be working by now.
+
+8/12/21
+9:39
+It started working again. I don't know what I've done.
+
+19:55
+It's stopped again, but I know what the problem is with it.
+It doesn't understand what session "logged_in" is and it's suddenly being used in an if statement, so the system (panics?) and sends back an error.
+Before the user logs in, I need to set the "logged_in" session to False so that the system knows what to so when the problem eventually arises.
+I'll attempt putting it in the __init__.py file. Though I'm not sure if that's the best idea.
+
+20:03
+That was the worst idea I've ever had in my entire life.
+Where the session goes instead, I don't know. I'll try and make another function that links to a new home screen.
+
+20:14
+It works. What's the student going to look at as soon as I logged in.
+There always has been the option to manage the schools they would've looked into and the grades they have achieved. What's that going to look like? Should there really be a link for that or should everything be on one page?
+I understand that the student hub is a student hub for a reason...
+I've had an idea to make the three columns dedicated for Schools, Grades and Tags. All of these have always been the focus anyway.
+
+10/12/21
+19:23
+I don't believe the post-login functions for the student and the admin should be in the same place. I'm not sure if that's my priority at the moment, anyway. I might deal with that later but I've made a note of it. I have the student hub to take care of.
+I've already made the edit grades and esit school files.
+
+19:51
+Upon making the html, they've made the idea that the enter grades system will require a lot of Javascript. I hate Javascript.
+
+20:50
+This is hard. I know what I want to do then
+
+12/12/21
+22:19
+It appears I haven't finished my sentence from yesterday: I know what I want to do but no idea how to do it. It's a little like a tag system meaning the student enters the course they did and what grade they got from it then when they hit enter, they see what they've entered above the input area. Think of it like posting a youtube comment, for example.
+How do you code that? How on earth do you code a youtube comment?
+
+22:41
+I'll upload my content to git.
+
+22:54
+There needs to be a way to make sure the login is valid without making else statements that lead to the login page at every other line. It's getting really annoying.
+
+23:10
+I've entered settings to print the student's details, for the sake of debugging. It's been long fixed but insanely dangerous. I'd better update it right now.
+
+15/12/21
+9:31
+My CS teacher had taken a look at my work and appears satisfied. What next, she says, is SQL for practically everything else that's backend. I had never thought of it like that.
+
+10:34
+How do you do a dropdown? I'm copy-pasting from the bootstrap website itself btw.
+
+12:34
+The CSS and JS is painfully inconsistent everywhere. I'm typing in Bootstrap4 on a Bootstrap5 project asking Bootstrap4 Javascript to do what I want from Bootstrap5. You know how much sense this makes? If not, that's good. I've settled on using 5 for everything from here on.
+
+12:46
+Oh yes, it's all coming together...
+
+8/1/2022
+18:46
+It's been far too long. I'm looking for a way to replace text using Jinja rather than Javascript.
+Otherwise, I've found ways to replace a little bit of text with Javascript. I should consider either continue with Javascript or use Jinja.
+Now that I'm actually typing this out, I'm having second thoughts
+19:06
+This might be overkill, but should I use a json file to replace the kinds of data I want there?
+19:08
+Found some code on the internet. All I have to do with it now is to translate what's there into the code that I want working on my site.
+19:11
+What on earth? My Javascript code is suddenly gone?!
+
+11/1/22
+14:31
+I've been mucking about with the html and javascript for far too long. I've gotten too bored.
+14:54
+For the first time in forever, I've done some actual work in making the grades system
+There's still more to do. A lot more to do.
+19:06
+A little out of line but I want to add a hotfix straight to the main registration to the student and the admin.
+Disregarding the one that's already there wouldn't be ideal... or would it? It could work!
+19:13
+It does! How do I keep it on the side I want rather than the one by default?
+19:25
+Did it.
+
+17/1/22 13:58
+Didn't realise I could work on flask without the need for Internet. This changes so much. I'll be on it far more.
+14:06
+Registration marked me as signed in when it wasn't supposed to. Deleted leftover code.
+14:09
+Tell me, Ikechukwu. How are you going to fix problems with your code without the GOD DAMN INTERNET?
+
+TODO:
+Tags.
+Grades management
+Admin hub
+School management for the admin
+Application management

@@ -2,10 +2,18 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-<div class="container">
-  <h1>Index</h1>
-  <p class="important">
-    Welcome to my awesome homepage.
-  </p>
+<div style="background-image: url('https://www.willmottdixon.co.uk/asset/10645'); color: white;">
+  <div class="container">
+    <div class="jumbotron text-center">
+      <br>
+      <h1>SCAS - The Secondary School options site for you.</h1>
+      <p>"We" here at SCAS want to give secondary students the best and ideal way to make your post-16 and apply to your sixth-form or college. Sign Up now for the most quality experience!</p>
+      <br><br><br>
+      <a href="{{ url_for('v_auth.reg_admin') }}"><button type="button" class="btn btn-primary btn-lg btn-block">Register as Admin</button></a><a href="{{ url_for('v_auth.reg_student') }}"><button type="button" class="btn btn-secondary btn-lg btn-block">Register as Student</button></a>
+      <a href="{{ url_for('v_auth.login') }}"><button type="button" class="btn btn-primary btn-lg btn-block">Log in</button></a>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </div>
+  </div>
 </div>
+
 {% endblock %}

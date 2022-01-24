@@ -1,0 +1,54 @@
+{% extends "base.html" %} 
+{% block title %}Manage Your Grades{% endblock %}
+
+{% block content %}
+
+<div class="container">
+  <br>
+  <h1>Manage your grades</h1>
+
+  <div>
+    <select class="form-select orm-select-padding-0-sm" aria-label="Wait, why is it so big???">
+      <option selected>Course</option>
+      <option value="GCSE">GCSE</option>
+      <option value="BTEC">BTEC</option>
+      <option value="Other">Other</option>
+    </select>
+  </div>
+  <div>
+    <button class="btn btn-outline-secondary dropdown-toggle" 
+    id="gradetype" type="button" 
+    data-toggle="dropdown" aria-haspopup="true" 
+    aria-expanded="false">Grade</button>
+  </div>
+  <div class="input-group mb-3">
+        
+    <input value="subject" type="text" class="form-control" aria-label="Text input with dropdown button">
+    <div class="input-group-append">
+      <!--This is going to vary drastically, depending on the kind of course that the student is studying.-->
+      <button class="btn btn-outline-secondary dropdown-toggle" id="gradetype" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Grade</button>
+      <ul class="dropdown-menu dropdown-menu-end">
+        <li><a class="dropdown-item" href="#">Top Grades</a></li>
+        <li><a class="dropdown-item" href="#">Middle Grade</a></li>
+        <li><a class="dropdown-item" href="#">Trash Grade</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="#">Separated link</a></li>
+      </ul>
+      <button class="btn btn-outline-secondary" type="button">Submit</button>
+    </div>
+  </div>
+</div>
+
+<script src="{{ url_for('static', filename='manage_grades.js') }}">
+  
+</script>
+
+<!--
+  <div class="btn-group" role="group" aria-label="Basic example">
+    <button type="button" class="btn btn-primary">Left</button>
+    <button type="button" class="btn btn-secondary">Middle</button>
+    <button type="button" class="btn btn-warning">Right</button>
+  </div>
+-->
+
+{% endblock %}

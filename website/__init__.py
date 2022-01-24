@@ -13,13 +13,17 @@ def create_app():
     db.init_app(app)
     
     #URLs from other files
-    from .main_views import main
-    from .auth_views import auth
+    from .v_main import main
+    from .v_auth import auth
+    from .v_postlogin import plog
 
+    #Registering blueprints
     app.register_blueprint(main, url_prefix="/")
     app.register_blueprint(auth, url_prefix="/")
+    app.register_blueprint(plog, url_prefix="/")
 
-    from .models import User
+    #NEEDS TO BE LOADED AND RUN BEFORE DATABASE IS INITIALISED
+    from .models import Student, Admin
     
     create_database(app)
 
