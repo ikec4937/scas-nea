@@ -4,39 +4,62 @@
 {% block content %}
 
 <div class="container">
-  <br>
-  <h1>Manage your grades</h1>
+  <form method="POST">
+    <br>
+    <h1>Manage your grades</h1>
+    <br>
+    <br>
 
-  <div>
-    <select class="form-select orm-select-padding-0-sm" aria-label="Wait, why is it so big???">
+    <p>Enter the type of yourse you did</p>
+    <select class="form-select orm-select-padding-0-sm" aria-label="coursetype" id="coursetype">
       <option selected>Course</option>
       <option value="GCSE">GCSE</option>
       <option value="BTEC">BTEC</option>
       <option value="Other">Other</option>
     </select>
-  </div>
-  <div>
-    <button class="btn btn-outline-secondary dropdown-toggle" 
-    id="gradetype" type="button" 
-    data-toggle="dropdown" aria-haspopup="true" 
-    aria-expanded="false">Grade</button>
-  </div>
-  <div class="input-group mb-3">
-        
-    <input value="subject" type="text" class="form-control" aria-label="Text input with dropdown button">
-    <div class="input-group-append">
-      <!--This is going to vary drastically, depending on the kind of course that the student is studying.-->
-      <button class="btn btn-outline-secondary dropdown-toggle" id="gradetype" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Grade</button>
-      <ul class="dropdown-menu dropdown-menu-end">
-        <li><a class="dropdown-item" href="#">Top Grades</a></li>
-        <li><a class="dropdown-item" href="#">Middle Grade</a></li>
-        <li><a class="dropdown-item" href="#">Trash Grade</a></li>
-        <li><hr class="dropdown-divider"></li>
-        <li><a class="dropdown-item" href="#">Separated link</a></li>
-      </ul>
-      <button class="btn btn-outline-secondary" type="button">Submit</button>
+
+    <br>
+    <p>Enter your board behind your course </p>
+    <select class="form-select orm-select-padding-0-sm" aria-label="Coursename" id="coursename">
+      <option selected>Board</option>
+      <option value="GCSE">Edexcel</option>
+      <option value="BTEC">OCR</option>
+      <option value="Other">WJEC (Eduqas)</option>
+      <option value="Other">AQA</option>
+    </select>
+
+    <br>
+    <div class="form-group">
+      <label for="lname">Enter the name of your course</label>
+      <input 
+        type="text" 
+        class="form-control" 
+        id="lname" 
+        name="lname" 
+        placeholder="Enter Last Name" />
     </div>
-  </div>
+
+    <br>
+    <p>What grade did you achieve</p>
+    <select class="form-select orm-select-padding-0-sm" aria-label="Wait, why is it so big???">
+      <option selected>Select a grade</option>
+      <option value="GCSE">1</option>
+      <option value="BTEC">2</option>
+      <option value="Other">3</option>
+      <option value="Other">4</option>
+      <option value="Other">5</option>
+      <option value="Other">6</option>
+      <option value="Other">7</option>
+      <option value="Other">8</option>
+      <option value="Other">9</option>
+      <option value="Other">Merit</option>
+      <option value="Other">Distinction</option>
+      <option value="Other">Pass</option>
+    </select>
+    <br>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
 </div>
 
 <script src="{{ url_for('static', filename='manage_grades.js') }}">
