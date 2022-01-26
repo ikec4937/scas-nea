@@ -127,12 +127,21 @@ It does! How do I keep it on the side I want rather than the one by default?
 19:25
 Did it.
 
-17/1/22 13:58
+17/1/22 
+13:58
 Didn't realise I could work on flask without the need for Internet. This changes so much. I'll be on it far more.
 14:06
 Registration marked me as signed in when it wasn't supposed to. Deleted leftover code.
-14:09
-Tell me, Ikechukwu. How are you going to fix problems with your code without the GOD DAMN INTERNET?
+
+18/1/22
+16:24
+This might be a little overkill, but I'm thinking of reading grade types from a JSON file.
+
+26/1/22
+21:46
+The issue that I'm not having is that I am not good as I should be with organisation and time management - two things that I truly need for this project to be done in acceptible quality.
+I've started with a diagram of what I've set out to do in the program. I've already made a database diagram beforehand, explaining how the program will work once it's set up. On the other hand, I haven't made a flowchart explaining the process to the reader until very recently.
+...suddenly, I can't see it.
 
 TODO:
 Tags.
