@@ -52,6 +52,7 @@ class Grade(db.Model, UserMixin):
     
     id = db.Column(db.Integer, primary_key=True)
     subject = db.Column(db.String(50))
+    boardname = db.Column(db.String(50))
     coursetype = db.Column(db.String(50))
     grade_score = db.Column(db.String(15))
     
