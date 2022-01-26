@@ -25,7 +25,22 @@ def student_hub():
 @plog.route("/student/manage-grades")
 def manage_grades():
     if session["logged_in"] and session["is_student"]:
+        if request.method == "POST":
+            coursetype = request.form.get("coursetype")
+            boardname = request.form.get("boardname")
+            subject = request.form.get("subject")
+            grade_score = request.form.get("grade_score")
+            if len(subject) < 2:
+                flash("Enter the FULL name of your subject", category="error")
+            elif coursetype == "none_selected" < 2: 
+                flash("You must have a name to enter the site", category="error")
+            elif boardname == "none_selected" < 2: 
+                flash("You must have a FULL name to enter the site", category="error")
+            elif grade_score == "none":
+                flash("Passwords do not match", category="error")
+        
         return render_template("mang_grades.html")
+
     else:
         flash("You are not logged in as a student to access this page", category="error")
         return redirect(url_for("v_auth.login"))
