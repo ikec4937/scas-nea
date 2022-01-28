@@ -1,0 +1,14 @@
+{
+	"course_type": ["GCSE", "BTEC"],
+    "board_name": ["OCR", "WJEC Eduqas", "Pearson Edexcel", "AQA"],
+    "subject": ["English Literature", "English Language", 
+    "Maths", "Physics", "Chemistry", "Biology", "Combined Science",
+    "French", "German", "Italian", "Spanish", "Latin",
+    "History", "Geography", "Religious Studies", 
+    "Art", "Fine art", "Photography", "Dance", "Music", 
+    "Food Technology", "Health and Social Care"],
+    "grade": {
+        "GCSE": ["U", 1, 2, 3, 4, 5, 6, 7, 8, 9],
+        "BTEC": ["Merit", "Distinction", "Pass"]
+    }
+}
