@@ -143,6 +143,11 @@ The issue that I'm not having is that I am not good as I should be with organisa
 I've started with a diagram of what I've set out to do in the program. I've already made a database diagram beforehand, explaining how the program will work once it's set up. On the other hand, I haven't made a flowchart explaining the process to the reader until very recently.
 ...suddenly, I can't see it.
 
+31/1/21
+20:36
+Since my last entry, I've downloaded github for desktop, meaning that I can save code not only on my USB and Github but also clone the repository to my computer. I currently have two backups (or three copies, however you think of it), of which can all be accessed and synchronised whenever necessary. 
+Github for desktop allows for descriptions in repository updates. This may render the point of this todo.txt file pointless, now. I'm not sure what to do with it anymore.
+
 TODO:
 Tags.
 Grades management
