@@ -30,6 +30,7 @@ def manage_grades():
             boardname = request.form.get("boardname")
             subject = request.form.get("subject")
             grade_score = request.form.get("grade_score")
+            
             if len(subject) < 2:
                 flash("Enter the FULL name of your subject", category="error")
             elif coursetype == "none_selected" < 2: 
@@ -38,6 +39,10 @@ def manage_grades():
                 flash("You must have a FULL name to enter the site", category="error")
             elif grade_score == "none":
                 flash("Passwords do not match", category="error")
+            else:
+                new_user = Grade(student_id=session["uID"].id, coursetype=coursetype, subject=subject, boardname=boardname, grade_score=grade_score)
+                db.session.add(new_user)
+                db.session.commit()
         
         return render_template("mang_grades.html")
 
@@ -86,35 +91,3 @@ def admin_hub():
 @plog.route("/admin/edit-school")
 def admin_edit_school():
     return render_template("edit_school_a.html")
-
-"""
-if request.method == "POST":
-    email = request.form.get("email")
-    firstname = request.form.get("fname")
-    lastname = request.form.get("lname")
-    password = request.form.get("pword")
-    password2 = request.form.get("pword2")
-
-    user = Student.query.filter_by(email=email).first()
-    if user: #If the user's email has been found in the database,
-        flash("Your email already exists with us", category="error")
-    elif len(email) < 4:
-        flash("Email must be greater than 4 characters", category="error")
-    elif len(firstname) < 2: 
-        flash("You must have a name to enter the site", category="error")
-    elif len(lastname) < 2: 
-        flash("You must have a FULL name to enter the site", category="error")
-    elif password != password2:
-        flash("Passwords do not match", category="error")
-    else:
-        new_user = Student(email=email, firstname=firstname, lastname=lastname, password=generate_password_hash(password2, method="sha256"))
-        db.session.add(new_user)
-        db.session.commit()
-        session["logged_in"] = True
-        session["is_student"] = False
-        session["uID"] = [new_user.id, firstname, lastname, email]
-        flash("You're in!", category="success")
-        return redirect(url_for("v_postlogin.student_hub"))
-
-return render_template("reg_student.html")
-"""
