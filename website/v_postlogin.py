@@ -43,6 +43,8 @@ def manage_grades():
                 new_user = Grade(student_id=session["uID"].id, coursetype=coursetype, subject=subject, boardname=boardname, grade_score=grade_score)
                 db.session.add(new_user)
                 db.session.commit()
+                
+                flash("Grade Successfully added", category="success")
         
         return render_template("mang_grades.html")
 

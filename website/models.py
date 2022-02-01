@@ -1,6 +1,5 @@
 from sqlalchemy.orm import relationship
 from . import db
-from flask_login import UserMixin
 from sqlalchemy.sql import func
 
 """
@@ -8,7 +7,7 @@ Now begs the question: How will the database be modeled?
 Application Model can be found on the dbdiagram.io
 """
 
-class Admin(db.Model, UserMixin):
+class Admin(db.Model):
     __tablename__ = "admin"
     
     id = db.Column(db.Integer, primary_key=True)
@@ -25,7 +24,7 @@ class Admin(db.Model, UserMixin):
             'lastname': self.lastname
         }
 
-class Student(db.Model, UserMixin):
+class Student(db.Model):
     __tablename__ = "student"
     
     id = db.Column(db.Integer, primary_key=True)
@@ -47,7 +46,7 @@ class Student(db.Model, UserMixin):
     """tags = db.relationship("Tags", backref="student")
     application_id = db.Column(db.Integer, db.ForeignKey("application.id"))"""
 
-class Grade(db.Model, UserMixin):
+class Grade(db.Model):
     __tablename__ = "grades"
     
     id = db.Column(db.Integer, primary_key=True)
@@ -67,12 +66,12 @@ class Grade(db.Model, UserMixin):
             'student_id': self.student_id
         }
 
-class Application(db.Model, UserMixin):
+class Application(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     #student_id = db.relationship("Student", backref="application")
     #school_id = db.Column(db.Integer, db.ForeignKey("school.id"))
 
-class School(db.Model, UserMixin):
+class School(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     school_name = db.column(db.String(100))
     description = db.column(db.Text)
