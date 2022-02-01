@@ -150,6 +150,10 @@ Github for desktop allows for descriptions in repository updates. This may rende
 21:40
 I may have found a use case for this file. I'll use it for noting my thoughts on the overall project. For reasoning on updating files within the project, I'll flock to Github for Desktop.
 
+1/2/22
+20:42
+Adding Git updates to individual files rather than one giant project update is so much easier to handle. I have much more space to detail updates in the 50 characters of the git update. Of course, I also have the description as well.
+
 TODO:
 Tags.
 Grades management
