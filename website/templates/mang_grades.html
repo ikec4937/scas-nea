@@ -7,13 +7,15 @@
   <div id="display_grades" align="center">
     <h1>Manage your grades</h1>
       <div class="list-group">
+        {% for grade in session["user"].grades %}
         <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
           <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1">OCR GCSE Physics</h5>
+            <h5 class="mb-1">{{grade.boardname}} {{grade.coursetype}} {{grade.coursename}}</h5>
             <small class="text-muted">August 2020</small>
           </div>
-          <h5 class="mb-1">Grade 7</h5>
+          <h5 class="mb-1">{{grade.grade_score}}</h5>
         </a>
+        {% endfor %}
         <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
           <div class="d-flex w-100 justify-content-between">
             <h5 class="mb-1">List group item heading</h5>

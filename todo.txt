@@ -154,6 +154,15 @@ I may have found a use case for this file. I'll use it for noting my thoughts on
 20:42
 Adding Git updates to individual files rather than one giant project update is so much easier to handle. I have much more space to detail updates in the 50 characters of the git update. Of course, I also have the description as well.
 
+10/2/22
+20:16
+I've figured out a basis on how grades are displayed in the site. I'm looking through TechWithTim tutorials to "make it real".
+20:34
+I've made a test to ensure that the way I've used to "make it real" works.
+It looks like student isn't recognised. Is the tablename the problem?
+21:24
+Now that it's clear to me what the route I have to take to implement the grade system is, figuring out how to get there is proving very difficult. I'll sync everything I already have while I can.
+
 TODO:
 Tags.
 Grades management
