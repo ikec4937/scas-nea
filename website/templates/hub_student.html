@@ -1,12 +1,12 @@
 {% extends "base.html" %} 
-{% block title %}{{session["uID"].firstname}}'s student hub{% endblock %}
+{% block title %}{{session["user"].firstname}}'s student hub{% endblock %}
 
 {% block content %}
 
 <div class="container">
   <br>
   <div class=jumbotron>
-    <h1>Hello, {{session["uID"].firstname}}! Welcome to SCAS!</h1>
+    <h1>Hello, {{session["user"].firstname}}! Welcome to SCAS!</h1>
   </div>
   <div>
     <h3>Search for your school</h3>

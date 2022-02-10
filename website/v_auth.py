@@ -29,7 +29,7 @@ def login():
                 if check_password_hash(student.password, password): #If the student is found, look through the passwords of the users.
                     session["logged_in"] = True #The user is logged in
                     session["is_student"] = True #...as a student
-                    session["uID"] = student.serialise() #Their first name, last name and email is saved.
+                    session["user"] = student.serialise() #Their first name, last name and email is saved.
                     flash("You're in as a student!", category="success")
                     return redirect(url_for("v_postlogin.student_hub"))
                 else:
@@ -44,7 +44,7 @@ def login():
                     flash("You're in as an admin!", category="success")
                     session["logged_in"] = True
                     session["is_student"] = False
-                    session["uID"] = admin.serialise()
+                    session["user"] = admin.serialise()
                     return redirect(url_for("v_postlogin.admin_hub"))
                 else:
                     flash("Your password is incorrect", category="error")
