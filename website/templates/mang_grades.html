@@ -4,60 +4,83 @@
 {% block content %}
 
 <div class="container">
-  <form method="POST">
-    <br>
+  <div id="display_grades" align="center">
     <h1>Manage your grades</h1>
-    <br>
+      <div class="list-group">
+        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">OCR GCSE Physics</h5>
+            <small class="text-muted">August 2020</small>
+          </div>
+          <h5 class="mb-1">Grade 7</h5>
+        </a>
+        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">List group item heading</h5>
+            <small class="text-muted">3 days ago</small>
+          </div>
+          <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+          <small class="text-muted">Donec id elit non mi porta.</small>
+        </a>
+      </div>
+  </div>
 
-    <select class="form-select orm-select-padding-0-sm" aria-label="Course type" id="coursetype">
-      <option selected>Enter the type of yourse you did</option>
-      <option value="GCSE">GCSE</option>
-      <option value="BTEC">BTEC</option>
-      <option value="Other">Other</option>
-    </select>
+  <div id="the_grade_manager">
+    <form method="POST">
+      <br>
+      <h1>Manage your grades</h1>
+      <br>
 
-    <br>
-    <select class="form-select orm-select-padding-0-sm" aria-label="Board name" id="boardname">
-      <option value="not_selected" selected>Enter your board behind your course </option>
-      <option value="GCSE">Edexcel</option>
-      <option value="BTEC">OCR</option>
-      <option value="Other">WJEC (Eduqas)</option>
-      <option value="Other">AQA</option>
-    </select>
+      <select class="form-select orm-select-padding-0-sm" aria-label="Course type" id="coursetype">
+        <option selected>Enter the type of yourse you did</option>
+        <option value="GCSE">GCSE</option>
+        <option value="BTEC">BTEC</option>
+        <option value="Other">Other</option>
+      </select>
 
-    <br>
-    <div class="form-group">
-      <label for="lname">Enter the name of your course</label>
-      <input 
-        type="text" 
-        class="form-control" 
-        id="lname" 
-        name="lname" 
-        placeholder="Enter Last Name" />
-    </div>
+      <br>
+      <select class="form-select orm-select-padding-0-sm" aria-label="Board name" id="boardname">
+        <option value="not_selected" selected>Enter your board behind your course </option>
+        <option value="GCSE">Edexcel</option>
+        <option value="BTEC">OCR</option>
+        <option value="Other">WJEC (Eduqas)</option>
+        <option value="Other">AQA</option>
+      </select>
 
-    <br>
-    <p>What grade did you achieve</p>
-    <select class="form-select orm-select-padding-0-sm" aria-label="Grade score" id="grade_score">
-      <option value="not_selected" selected>Select a grade</option>
-      <option value="pending" >Pending</option>
-      <option value="one">1</option>
-      <option value="two">2</option>
-      <option value="three">3</option>
-      <option value="four">4</option>
-      <option value="five">5</option>
-      <option value="six">6</option>
-      <option value="seven">7</option>
-      <option value="eight">8</option>
-      <option value="nine">9</option>
-      <option value="merit">Merit</option>
-      <option value="disti">Distinction</option>
-      <option value="pass">Pass</option>
-    </select>
-    <br>
+      <br>
+      <div class="form-group">
+        <label for="lname">Enter the name of your course</label>
+        <input 
+          type="text" 
+          class="form-control" 
+          id="lname" 
+          name="lname" 
+          placeholder="Enter Last Name" />
+      </div>
 
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
+      <br>
+      <p>What grade did you achieve</p>
+      <select class="form-select orm-select-padding-0-sm" aria-label="Grade score" id="grade_score">
+        <option value="not_selected" selected>Select a grade</option>
+        <option value="pending" >Pending</option>
+        <option value="one">1</option>
+        <option value="two">2</option>
+        <option value="three">3</option>
+        <option value="four">4</option>
+        <option value="five">5</option>
+        <option value="six">6</option>
+        <option value="seven">7</option>
+        <option value="eight">8</option>
+        <option value="nine">9</option>
+        <option value="merit">Merit</option>
+        <option value="disti">Distinction</option>
+        <option value="pass">Pass</option>
+      </select>
+      <br>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
 </div>
 
 <script src="{{ url_for('static', filename='grade_input.js') }}">
