@@ -25,6 +25,9 @@ def student_hub():
 @plog.route("/student/manage-grades")
 def manage_grades():
     if session["logged_in"] and session["is_student"]:
+        grade = Grade.query.filter_by(student_id=session["user"].id).first()
+        session["grade"] = grade.serialise()
+        
         if request.method == "POST":
             coursetype = request.form.get("coursetype")
             boardname = request.form.get("boardname")
@@ -33,14 +36,14 @@ def manage_grades():
             
             if len(subject) < 2:
                 flash("Enter the FULL name of your subject", category="error")
-            elif coursetype == "none_selected" < 2: 
-                flash("You must have a name to enter the site", category="error")
-            elif boardname == "none_selected" < 2: 
-                flash("You must have a FULL name to enter the site", category="error")
+            elif coursetype == "none_selected": 
+                flash("Enter the type of course you have studied", category="error")
+            elif boardname == "none_selected": 
+                flash("Enter your course's board", category="error")
             elif grade_score == "none":
-                flash("Passwords do not match", category="error")
+                flash("Enter your grade", category="error")
             else:
-                new_user = Grade(student_id=session["uID"].id, coursetype=coursetype, subject=subject, boardname=boardname, grade_score=grade_score)
+                new_user = Grade(student_id=session["user"].id, coursetype=coursetype, subject=subject, boardname=boardname, grade_score=grade_score)
                 db.session.add(new_user)
                 db.session.commit()
                 
@@ -70,7 +73,7 @@ def student_manage_application():
             
             #And then I need to add some variables here and there to ensure that I'm pushing in data that exists.
 
-            new_grade = Grade(session["uID"].uID, subject=subject, coursetype=coursetype, gradescore=gradescore)
+            new_grade = Grade(session["user"].uID, subject=subject, coursetype=coursetype, gradescore=gradescore)
             db.session.add(new_grade)
             db.session.commit()
         
