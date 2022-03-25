@@ -33,16 +33,23 @@
       <h1>Manage your grades</h1>
       <br>
 
-      <select class="form-select orm-select-padding-0-sm" aria-label="Course type" id="coursetype" onchange="getSelectCourseType();">
+      <select 
+        class="form-select form-select-padding-0-sm" 
+        aria-label="Course type" 
+        id="coursetype" 
+        onchange="getSelectCourseType();"
+      > <!--It used to say orm-select-padding-0-sm in case it doesn't work -->
         <option selected>Enter the type of yourse you did</option>
-        <option value="GCSE">GCSE</option>
         <option value="BTEC">BTEC</option>
+        <option value="GCSE">GCSE</option>
+        <option value="iGCSE">International GCSE</option>
         <option value="CamNat">OCR Cambridge Nationals</option>
         <option value="Other">Other</option>
       </select>
 
       <br>
-      <select class="form-select orm-select-padding-0-sm" aria-label="Board name" id="boardname">
+      <select class="form-select form-select-padding-0-sm" aria-label="Board name" id="boardname">
+        <!--It used to say orm-select-padding-0-sm in case it doesn't work -->
         <option value="not_selected" selected>Enter your board behind your course </option>
         <option value="GCSE">Edexcel</option>
         <option value="BTEC">OCR</option>
@@ -63,7 +70,7 @@
 
       <br>
       <p>What grade did you achieve</p>
-      <select class="form-select orm-select-padding-0-sm" aria-label="Grade score" id="grade_score">
+      <select onchange="changeList(this.value);" class="form-select orm-select-padding-0-sm" aria-label="Grade score" id="grade_score">
         <option value="not_selected" selected>Select a grade</option>
         <option value="pending" >Pending</option>
         <option value="one">1</option>
