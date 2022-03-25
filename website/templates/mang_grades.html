@@ -33,10 +33,11 @@
       <h1>Manage your grades</h1>
       <br>
 
-      <select class="form-select orm-select-padding-0-sm" aria-label="Course type" id="coursetype">
+      <select class="form-select orm-select-padding-0-sm" aria-label="Course type" id="coursetype" onchange="getSelectCourseType();">
         <option selected>Enter the type of yourse you did</option>
         <option value="GCSE">GCSE</option>
         <option value="BTEC">BTEC</option>
+        <option value="CamNat">OCR Cambridge Nationals</option>
         <option value="Other">Other</option>
       </select>
 
