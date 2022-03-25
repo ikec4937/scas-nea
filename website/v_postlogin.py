@@ -25,8 +25,8 @@ def student_hub():
 @plog.route("/student/manage-grades")
 def manage_grades():
     if session["logged_in"] and session["is_student"]:
-        grade = Grade.query.filter_by(student_id=session["user"].id).first()
-        session["grade"] = grade.serialise()
+        #grade = Grade.query.filter_by(student_id=session["user"].id).first()
+        #session["grade"] = grade.serialise()
         
         if request.method == "POST":
             coursetype = request.form.get("coursetype")
