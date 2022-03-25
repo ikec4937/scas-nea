@@ -163,6 +163,11 @@ It looks like student isn't recognised. Is the tablename the problem?
 21:24
 Now that it's clear to me what the route I have to take to implement the grade system is, figuring out how to get there is proving very difficult. I'll sync everything I already have while I can.
 
+25/3/22
+17:32
+It's been a while.
+I've successfully been able to make the changing grades work. This is a massive step to making the grade system work as planned. I now need to find a way to both display the grades and enter new grades into the system - both of which are herder to pull off that I had imagined.
+
 TODO:
 Tags.
 Grades management
