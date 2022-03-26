@@ -168,6 +168,15 @@ Now that it's clear to me what the route I have to take to implement the grade s
 It's been a while.
 I've successfully been able to make the changing grades work. This is a massive step to making the grade system work as planned. I now need to find a way to both display the grades and enter new grades into the system - both of which are herder to pull off that I had imagined.
 
+26/3/22
+20:39
+I want to make a search function for the grades system for the user to search for their subjects. I'm certain that the grades function as is works perfectly fine. Which is perfect for what I need.
+I might want to do that later in development. It's not necessary, now. I just want to check of the test works.
+21:12
+I've run into a problem with the grades file once again. To publish it, I need to store the student details. However, the student sessions don't really exist outside one view. If I make a session in v_auth, it appears that can't use the session in v_postlogin. To solve this, I need to use cookies. That might mean rewriting a lot of code, though I'm not too sure.
+21:18
+The site explaining cookies that I'm looking at appears very small. It may be easier than I thought it'd be. Only time will tell about that.
+
 TODO:
 Tags.
 Grades management
