@@ -1,15 +1,28 @@
-function getSelectBoardName() {
-    let selectValue = document.getElementById("boardname").value;
-}
+/* //All the below code is for later
+let gcseSubjects = ["English Literature", "English Language", 
+"Maths", "Physics", "Chemistry", "Biology", "Combined Science",
+"French", "German", "Italian", "Spanish", "Latin",
+"History", "Geography", "Religious Studies", 
+"Art", "Fine art", "Photography", "Dance", "Music"];
+
+let btecSubjects = ["Food Technology", "Health and Social Care"];
+
+let iGcseSubjects = ["English Literature (UK)", "English Literature (US)", "English as an additional language", "English as a second language", 
+"Maths", "Additional Maths", "Math (US)", "Physics", "Chemistry", "Biology", "Combined Science", "Co-Ordinated Science",
+"French", "German", "Italian", "Spanish", "Latin",
+"History", "Geography", "Religious Studies", 
+"Art", "Fine art", "Photography", "Dance", "Music"];
+
+let camNameSubjects = [""];*/
 
 function getSelectCourseType() {
-    let selectValue = document.getElementById("coursetype").value;
-    changeGradeList(selectValue);
+    let selectValue = document.getElementById("coursetype").value; //As the course type is selected,
+    changeGradeList(selectValue); //The below function is called
 }
 
 function changeGradeList(selectValue) {
     let html = "";
-    html += "<option value=\"not_selected\" selected>Select a grade</option>";
+    html += "<option value=\"not_selected\" selected>Select a grade</option>"; 
     html += "<option value=\"pending\" >Pending</option>";
     
     switch(selectValue){
@@ -78,5 +91,9 @@ function changeGradeList(selectValue) {
             document.getElementById("grade_score").innerHTML=html;
         */
     }
+
+}
+
+function changeSubjects() {
 
 }
