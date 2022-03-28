@@ -40,9 +40,8 @@ class Student(db.Model):
             'id': self.id,
             'email': self.email,
             'firstname': self.firstname,
-            'lastname': self.lastname,
-            'grades': self.grades #Does this make sense?
-        } 
+            'lastname': self.lastname
+        }
     
     """tags = db.relationship("Tags", backref="student")
     application_id = db.Column(db.Integer, db.ForeignKey("application.id"))"""
