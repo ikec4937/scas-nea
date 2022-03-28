@@ -22,7 +22,7 @@ def student_hub():
         flash("You need to log in or register to access this page", category="error")
         return redirect(url_for("v_auth.login"))
 
-@plog.route("/student/manage-grades")
+@plog.route("/student/manage-grades", methods=['GET', 'POST'])
 def manage_grades():
     if session["logged_in"] and session["is_student"]:
         #grade = Grade.query.filter_by(student_id=session["user"].id).first()
