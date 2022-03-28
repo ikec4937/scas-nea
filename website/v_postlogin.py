@@ -43,7 +43,7 @@ def manage_grades():
             elif grade_score == "none":
                 flash("Enter your grade", category="error")
             else:
-                new_user = Grade(student_id=session["user"].id, coursetype=coursetype, subject=subject, boardname=boardname, grade_score=grade_score)
+                new_user = Grade(student_id=session["user"]["id"], coursetype=coursetype, subject=subject, boardname=boardname, grade_score=grade_score)
                 db.session.add(new_user)
                 db.session.commit()
                 
