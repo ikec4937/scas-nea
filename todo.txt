@@ -180,6 +180,17 @@ The site explaining cookies that I'm looking at appears very small. It may be ea
 27/3/22
 I've found a video on cookies that's more in-depth than the site I found but as a result, 21 minutes long.
 
+28/3/22
+9:20
+After models.py has worked perfectly during development yesterday, it suddenly doesn't anymore?
+Back when I wrote the thing, it read: "'grades': self.grades #Does this make sense?"
+Maybe it didn't after all...
+
+9:36
+Sessions are universal. They exist everywhere in the project. That's how I route users to the student or admin hubs to begin with. How I didn't think of that sooner, I don't know. It's just session["user"].id that's the problem. What is "id"? The software doesn't appear to know either.
+I'll remove session["user"].id and see if the project still works.
+It doesn't work. My mission is to figure this out as soon as possible.
+
 TODO:
 Tags.
 Grades management
