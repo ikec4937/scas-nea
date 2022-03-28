@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, flash, jsonify, session, redirect, url_for
+from flask import Blueprint, render_template, session, redirect, url_for
 
 main = Blueprint("v_main", __name__)
 
