@@ -185,15 +185,25 @@ I've found a video on cookies that's more in-depth than the site I found but as 
 After models.py has worked perfectly during development yesterday, it suddenly doesn't anymore?
 Back when I wrote the thing, it read: "'grades': self.grades #Does this make sense?"
 Maybe it didn't after all...
-
 9:36
 Sessions are universal. They exist everywhere in the project. That's how I route users to the student or admin hubs to begin with. How I didn't think of that sooner, I don't know. It's just session["user"].id that's the problem. What is "id"? The software doesn't appear to know either.
 I'll remove session["user"].id and see if the project still works.
 It doesn't work. My mission is to figure this out as soon as possible.
+(Between 20:30 to 21:00)
+What sessions can be read?
+I'll see if sessions["user"].firstname works? If it does, it would mean that the issue is just with sessions["user"].id meaning I just have to focus on the data format of sessions["user"].id.
+...it doesn't work.
+I'll see if sessions["is_student"] works? If it doesn't there's an issue with the entire session; it would give me a better understanding of how sessions work and a clue as to how I can work around the issue.
+...it does work.
+I don't know what's the problem, anymore…
+21:00
+Random thought: Am I printing session["user"] the wrong way? I'll print it out without the .id at the end to see if it works out
+21:27
+I've done a test to print session["user"] as-is to see if it works like session["is_student"] does. It does work, fortunately. Syntax for Student information reminds me of dictionary syntax. I'll need to find a way to get information from a dictionary because clearly, I've done it wrong the whole time
 
 TODO:
 Tags.
-Grades management
+Enter grades into the system
 Admin hub
 School management for the admin
 Application management
