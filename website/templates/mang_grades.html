@@ -35,11 +35,11 @@
 
       <select 
         class="form-select form-select-padding-0-sm" 
-        aria-label="Course type" 
-        id="coursetype" 
-        onchange="getSelectCourseType();"
+        aria-label="Qualification" 
+        id="qualif" 
+        onchange="getSelectQualifType();"
       > <!--It used to say orm-select-padding-0-sm in case it doesn't work -->
-        <option selected>Enter the type of yourse you did</option>
+        <option value="Other" selected>What kind of qualification did you achieve?</option>
         <option value="BTEC">BTEC</option>
         <option value="GCSE">GCSE</option>
         <option value="iGCSE">International GCSE</option>
@@ -51,10 +51,11 @@
       <select class="form-select form-select-padding-0-sm" aria-label="Board name" id="boardname">
         <!--It used to say orm-select-padding-0-sm in case it doesn't work -->
         <option value="not_selected" selected>Enter your board behind your course </option>
-        <option value="GCSE">Edexcel</option>
-        <option value="BTEC">OCR</option>
-        <option value="Other">WJEC (Eduqas)</option>
-        <option value="Other">AQA</option>
+        <option value="Edexcel">Edexcel</option>
+        <option value="OCR">OCR</option>
+        <option value="WJEC">WJEC (Eduqas)</option>
+        <option value="AQA">AQA</option>
+        <option value="Other">Other</option>
       </select>
 
       <br>
