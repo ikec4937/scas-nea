@@ -1,6 +1,6 @@
 //I'm using camelcase for Javascript because that's generally how it is for the language.
-function getSelectCourseType() {
-    let selectValue = document.getElementById("coursetype").value; //As the course type is selected,
+function getSelectQualifType() { //For qualification (I didn't know tha name at the time)
+    let selectValue = document.getElementById("qualif").value; //As the course type is selected,
     changeGradeList(selectValue); //The below function is called
 }
 
