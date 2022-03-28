@@ -177,6 +177,9 @@ I've run into a problem with the grades file once again. To publish it, I need t
 21:18
 The site explaining cookies that I'm looking at appears very small. It may be easier than I thought it'd be. Only time will tell about that.
 
+27/3/22
+I've found a video on cookies that's more in-depth than the site I found but as a result, 21 minutes long.
+
 TODO:
 Tags.
 Grades management
