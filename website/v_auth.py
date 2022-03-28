@@ -1,7 +1,7 @@
 from flask import ( #Didn't know you could do this. Cool.
     Blueprint, 
     render_template, 
-    request, 
+    request, make_response,
     flash, 
     redirect, url_for,
     session, g
@@ -120,3 +120,10 @@ def reg_admin():
             return redirect(url_for("v_main.index"))
     
     return render_template("reg_admin.html")
+
+@auth.route("/cookies")
+def cookies():
+    res = make_response(render_template("404_page.html"))
+    res.set_cookie("flavour", "Chocolate Chip")
+    res.set_cookie('student', value = json.dumps(someObject), max_age=None)
+    return res
