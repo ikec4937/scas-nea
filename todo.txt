@@ -200,6 +200,8 @@ I don't know what's the problem, anymore…
 Random thought: Am I printing session["user"] the wrong way? I'll print it out without the .id at the end to see if it works out
 21:27
 I've done a test to print session["user"] as-is to see if it works like session["is_student"] does. It does work, fortunately. Syntax for Student information reminds me of dictionary syntax. I'll need to find a way to get information from a dictionary because clearly, I've done it wrong the whole time
+22:12
+I've found the root of all of my problems - It's copy-pasting everthing to the grades file. I wasn't thinking when I was making the change - and as a result, I've forgotten to put methods into the route! There are far too many issues that make the grades system such a hell to complete. It really should NOT have taken so long to complete.
 
 TODO:
 Tags.
