@@ -203,6 +203,10 @@ I've done a test to print session["user"] as-is to see if it works like session[
 22:12
 I've found the root of all of my problems - It's copy-pasting everthing to the grades file. I wasn't thinking when I was making the change - and as a result, I've forgotten to put methods into the route! There are far too many issues that make the grades system such a hell to complete. It really should NOT have taken so long to complete.
 
+30/3/22
+So far, I've been making great progress on completing the grades management system.
+There are still a few things that I haven't gotten sorted out just yet.
+
 TODO:
 Tags.
 Enter grades into the system
