@@ -24,6 +24,7 @@ function changeGradeList(selectValue) {
             } //Each GCSE grade is pushed into html string text in the html syntax
 
             document.getElementById("grade_score").innerHTML=html;
+            //Grabs the contents of whatever belongs to the element "grade_score" and replaces it all with the html string value
 
         break;
 
