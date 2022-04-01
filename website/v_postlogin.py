@@ -29,21 +29,21 @@ def manage_grades():
         #session["grade"] = grade.serialise()
         
         if request.method == "POST":
-            coursetype = request.form.get("coursetype")
+            qualif = request.form.get("qualif")
             boardname = request.form.get("boardname")
             subject = request.form.get("subject")
             grade_score = request.form.get("grade_score")
             
             if len(subject) < 2:
                 flash("Enter the FULL name of your subject", category="error")
-            elif coursetype == "none_selected": 
+            elif qualif == "none_selected": 
                 flash("Enter the type of course you have studied", category="error")
             elif boardname == "none_selected": 
                 flash("Enter your course's board", category="error")
             elif grade_score == "none":
                 flash("Enter your grade", category="error")
             else:
-                new_user = Grade(student_id=session["user"]["id"], coursetype=coursetype, subject=subject, boardname=boardname, grade_score=grade_score)
+                new_user = Grade(student_id=session["user"]["id"], qualif=qualif, subject=subject, boardname=boardname, grade_score=grade_score)
                 db.session.add(new_user)
                 db.session.commit()
                 
