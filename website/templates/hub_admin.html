@@ -1,12 +1,12 @@
 {% extends "base.html" %} 
-{% block title %}{{session["user"].firstname}}'s admin hub{% endblock %}
+{% block title %}{{session["user"]["firstname"]}}'s admin hub{% endblock %}
 
 {% block content %}
 
 <div class="container">
   <br>
   <div class="jumbotron">
-    <h1>Welcome, {{session["user"].firstname}}, welcome to SCAS!</h1>
+    <h1>Welcome, {{session["user"]["firstname"]}}, welcome to SCAS!</h1>
   </div>
 </div>
 
