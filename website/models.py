@@ -72,7 +72,9 @@ class Application(db.Model):
 
 class School(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    school_name = db.column(db.String(100))
-    description = db.column(db.Text)
+    school_name = db.Column(db.String(100))
+    phone_number = db.Column(db.String(11)) #It'd be weird to enter it as an integer. Don't ask why.
+    contact_email = db.Column(db.String(100)) #Could be long
+    description = db.Column(db.Text)
     #admins = db.relationship("Application", backref="school")
     #There are other things, I don't know what they are though.
