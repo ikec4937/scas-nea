@@ -6,7 +6,28 @@
 <div class="container">
   <br>
   <div class="jumbotron">
-    <h1>Welcome, {{session["user"]["firstname"]}}, welcome to SCAS!</h1>
+    <h1>Welcome, {{session["user"]["firstname"]}}! Welcome to SCAS!</h1>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-sm-6">
+      <h3>Manage *school name*</h3> <!--School name goes here-->
+      <p></p>
+      <a href="{{ url_for('v_postlogin.manage_grades') }}"><button class="btn btn-primary text-center">Enter Grades</button></a>
+    </div>
+    <div class="col-sm-6">
+      <h3>Manage Tags</h3>        
+      <p>These help taylor both the kinds of schools you're looking for and the kinds of student schools are looking for.</p>
+      <button class="btn btn-primary text-center">Enter Tags</button>
+    </div>
+  </div>
+  <div>
+    <h3>Search around schools</h3>
+    <div class="input-group">
+      <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+      aria-describedby="search-addon" />
+      <button type="button" class="btn btn-outline-primary">search</button>
+    </div>
   </div>
 </div>
 
