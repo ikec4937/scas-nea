@@ -207,9 +207,37 @@ I've found the root of all of my problems - It's copy-pasting everthing to the g
 So far, I've been making great progress on completing the grades management system.
 There are still a few things that I haven't gotten sorted out just yet.
 
+25/2/22
+17:30
+I'm going to work on the admin hub, now. I've realised that I have rejected it for far too long.
+I've realised that I haven't planned enough for the admin hub.
+I'm going to look at different ideas of what the Admin hub could look like.
+I could think of it like a social media page. With the viewer being able to see other people's posts and their own page at the same time. In that sense, I can keep the search bar for schools but keep it at the bottom so that the user doesn't feel a need to use it.
+Then the Admin's school management page can be applied towards the centre.
+I'm really throwing darts at a board here but wouldn't it be nice if there were notifications for updates and information on both the admin and student hubs - and maybe one for the school, too? Then I'd have to consider: How is that going to work? Will there be a sort of staff user as well, now? I really should've considered a backroom for the entire site in that sense.
+17:42
+I'm thinking too far. I could focus on a DM system between student and admin, primarily. Maybe if I have time (or if I want to work on it in my spare time), I could work on that.
+21:50
+I'm starting to heavily wonder if my software recognises SQLAlchemy
+22:07
+It does.
+I've also done the admin hub. It was easy, since there wasn't much to do, here. The big obstacle that I need to overcome, now, is the school management system.
+How do I pull each and every school system into one page, with its own name?
+Strangely enough, after having typed it up, I feel like I've answered my own question. I've already figured it out when developing the student and admin hub. Knowing this, it should be relatively easy.
+How do I back this up, however? Could a simple json file do the trick? Quite possibly.
+Do I know what a school would want to enter for itself?
+...yes.
+The School's Name (obviously)
+Its phone number
+Its contact email
+A desctiption of the school.
+A Banner picture
+A profile picture
+The Grade requirements that the school wants (the admin would type that one out)
+The option to leave all of these options blank and just link their website if they want to anyway.
+
 TODO:
 Tags.
 Enter grades into the system
-Admin hub
 School management for the admin
 Application management
