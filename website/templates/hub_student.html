@@ -7,8 +7,10 @@
   <br>
   <div class=jumbotron>
     <h1>Hello, {{session["user"].firstname}}! Welcome to SCAS!</h1>
+    <!--I do wonder why I can get away with this in the student hub and absolutely nowhere else...-->
   </div>
   <div>
+    <!--School search-->
     <h3>Search for your school</h3>
     <div class="input-group">
       <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
@@ -18,11 +20,13 @@
   </div>
   <br>
   <div class="row">
+    <!--Grade Management-->
     <div class="col-sm-6">
       <h3>Manage your grades</h3>
       <p>Manage grades for your school grades (and some things about yourself)</p>
       <a href="{{ url_for('v_postlogin.manage_grades') }}"><button class="btn btn-primary text-center">Enter Grades</button></a>
     </div>
+    <!--Tag Management-->
     <div class="col-sm-6">
       <h3>Manage Tags</h3>        
       <p>These help taylor both the kinds of schools you're looking for and the kinds of student schools are looking for.</p>
