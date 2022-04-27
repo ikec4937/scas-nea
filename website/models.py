@@ -15,6 +15,8 @@ class Admin(db.Model):
     firstname = db.Column(db.String(150))
     lastname = db.Column(db.String(150))
 
+    school = db.relationship("School")
+
     def serialise(self):
         return {
             'id': self.id,
@@ -33,6 +35,7 @@ class Student(db.Model):
     lastname = db.Column(db.String(150))
 
     grades = db.relationship("Grade")
+    
     
     def serialise(self):
         return {
@@ -71,10 +74,21 @@ class Application(db.Model):
     #school_id = db.Column(db.Integer, db.ForeignKey("school.id"))
 
 class School(db.Model):
+    __tablename__ = "school"
+    
     id = db.Column(db.Integer, primary_key=True)
     school_name = db.Column(db.String(100))
-    phone_number = db.Column(db.String(11)) #It'd be weird to enter it as an integer. Don't ask why.
+    cont_number = db.Column(db.String(11)) #It'd be weird to enter it as an integer. Don't ask why.
     contact_email = db.Column(db.String(100)) #Could be long
     description = db.Column(db.Text)
-    #admins = db.relationship("Application", backref="school")
-    #There are other things, I don't know what they are though.
+
+    admin_id = db.Column(db.Integer, db.ForeignKey("admin.id"))
+
+    def serialise(self):
+        return {
+            "id": self.id, #It's copy-pasted from the json file, so that's why it's in double quotes
+            "school_name": self.school_name,
+            "cont_number": self.cont_number,
+            "contact_email": self.contact_email,
+            "description": self.description
+        }
