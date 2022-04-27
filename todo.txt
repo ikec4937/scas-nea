@@ -207,7 +207,7 @@ I've found the root of all of my problems - It's copy-pasting everthing to the g
 So far, I've been making great progress on completing the grades management system.
 There are still a few things that I haven't gotten sorted out just yet.
 
-25/2/22
+25/4/22
 17:30
 I'm going to work on the admin hub, now. I've realised that I have rejected it for far too long.
 I've realised that I haven't planned enough for the admin hub.
@@ -235,9 +235,17 @@ A Banner picture
 A profile picture
 The Grade requirements that the school wants (the admin would type that one out)
 The option to leave all of these options blank and just link their website if they want to anyway.
+22:31
+I still have a need for the subjects in the grade management system.
+22:42
+In a span of 1 minute, 61 errors suddenly turn straight into one :)
+
+26/4/22
+I'm considering this: Could I just enter data as the school?
 
 TODO:
 Tags.
 Enter grades into the system
 School management for the admin
+Viewing schools
 Application management
