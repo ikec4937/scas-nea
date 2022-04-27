@@ -93,6 +93,10 @@ def admin_hub():
         flash("You need to log in or register to access this page", category="error")
         return redirect(url_for("v_auth.login"))
 
-@plog.route("/admin/edit-school")
+@plog.route("/student/school") #school goes here
+def view_school():
+    pass
+
+@plog.route("/admin/edit-school") #admin/name
 def admin_edit_school():
     return render_template("edit_school_a.html")
