@@ -54,7 +54,10 @@ def login():
         else:
             flash("Are you a student or an admin?", category="error")
     
-    return render_template("login.html")
+    if session["logged_in"]:
+        return redirect(url_for("v_postlogin.student_hub"))
+    else:
+        return render_template("login.html")
 
 @auth.route("/logout-user")
 def logout():
