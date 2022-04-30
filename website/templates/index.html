@@ -9,8 +9,16 @@
       <h1>SCAS - The Secondary School options site for you.</h1>
       <p>"We" here at SCAS want to give secondary students the best and ideal way to make your post-16 and apply to your sixth-form or college. Sign Up now for the most quality experience!</p>
       <br><br><br>
+      {% if session["logged_in"] %}
+        {% if session["is_student"] %}
+        <a href="{{ url_for('v_postlogin.student_hub') }}"><button type="button" class="btn btn-primary btn-lg btn-block">Go to Student Hub</button></a>
+        {% else %}
+        <a href="{{ url_for('v_postlogin.admin_hub') }}"><button type="button" class="btn btn-primary btn-lg btn-block">Go to Admin Hub</button></a>
+        {% endif %}
+      {% else %}
       <a href="{{ url_for('v_auth.reg_admin') }}"><button type="button" class="btn btn-primary btn-lg btn-block">Register as Admin</button></a><a href="{{ url_for('v_auth.reg_student') }}"><button type="button" class="btn btn-secondary btn-lg btn-block">Register as Student</button></a>
       <a href="{{ url_for('v_auth.login') }}"><button type="button" class="btn btn-primary btn-lg btn-block">Log in</button></a>
+      {% endif %}
       <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     </div>
   </div>
